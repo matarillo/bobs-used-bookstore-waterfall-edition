@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-A-ORDER — 注文の詳細</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-A-ORDER — 注文の詳細</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Admin/Orders/Details/{id}</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-ADM-03</a> 注文詳細照会 /
+    <a href="../../04-functional-requirements.md">FR-ADM-04</a> 注文の履行</td></tr>
+  <tr><th>フレーム</th><td>管理</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">注文の詳細</p>
+
+  <div class="cards">
+    <div class="card">
+      <div><b>顧客名</b></div>
+      <div>住所行1</div>
+      <div>住所行2</div>
+      <div>市区町村　州　郵便番号</div>
+      <div>国</div>
+    </div>
+
+    <div class="card">
+      <div class="kv"><span class="name">注文番号</span><span>注文番号</span></div>
+      <div class="kv"><span class="name">状態</span>
+        <span>受付待ち　<span class="btn primary">受け付ける</span></span></div>
+      <div class="kv"><span class="name">注文日</span><span>日付</span></div>
+      <div class="kv"><span class="name">納品予定日</span><span>日付</span></div>
+      <div class="kv"><span class="name">小計</span><span>金額</span></div>
+      <div class="kv"><span class="name">税</span><span>金額</span></div>
+      <div class="kv"><span class="name">合計</span><span><b>金額</b></span></div>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <th class="u3">書名</th>
+      <th class="u2">著者</th>
+      <th class="u1">出版社</th>
+      <th class="u1">ジャンル</th>
+      <th class="u1">書籍種別</th>
+      <th class="u1">コンディション</th>
+      <th class="u1">売価</th>
+      <th class="u1">数量</th>
+      <th class="u1">小計</th>
+    </tr>
+    <tr>
+      <td>書名</td><td>著者</td><td>出版社</td><td>ジャンル</td><td>書籍種別</td>
+      <td>コンディション</td><td>売価</td><td>数量</td><td>小計</td>
+    </tr>
+    <tr>
+      <td>書名</td><td>著者</td><td>出版社</td><td>ジャンル</td><td>書籍種別</td>
+      <td>コンディション</td><td>売価</td><td>数量</td><td>小計</td>
+    </tr>
+    <tr><td colspan="9"><span class="repeat">同じ形の行が並ぶ</span></td></tr>
+  </table>
+
+  <div class="actions">
+    <span class="btn primary">戻る</span>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>受付待ち</td><td>状態の隣に「受け付ける」が出る</td></tr>
+  <tr><td>受付済</td><td>状態の隣に「出荷する」が出る</td></tr>
+  <tr><td>出荷済</td><td>状態の隣に「配達済にする」が出る</td></tr>
+  <tr><td>配達済・取消済</td><td><b>操作が消え、状態の値だけが残る。</b>版面の形は変わらない</td></tr>
+  <tr><td>住所行2 が空</td><td>その行が空になる。行そのものは残る</td></tr>
+</table>
+
+</div>

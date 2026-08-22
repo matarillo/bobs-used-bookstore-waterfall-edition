@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-ORDERS — 自分の注文</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-ORDERS — 自分の注文</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Orders</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-10</a> 注文照会 /
+    <a href="../../04-functional-requirements.md">FR-CUS-11</a> 注文取消</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">自分の注文</p>
+
+  <table>
+    <tr>
+      <th class="u2">注文番号</th>
+      <th class="u2">注文日</th>
+      <th class="u2">合計（税込）</th>
+      <th class="u2">納品予定日</th>
+      <th class="u2">状態</th>
+      <th class="u2"></th>
+    </tr>
+    <tr>
+      <td>注文番号</td>
+      <td>日付</td>
+      <td>金額</td>
+      <td>日付</td>
+      <td>受付待ち</td>
+      <td>
+        <div class="row">
+          <span class="btn">詳細</span>
+          <span class="btn">取消</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>注文番号</td>
+      <td>日付</td>
+      <td>金額</td>
+      <td>日付</td>
+      <td>出荷済</td>
+      <td>
+        <div class="row">
+          <span class="btn">詳細</span>
+        </div>
+      </td>
+    </tr>
+    <tr><td colspan="6"><span class="repeat">同じ形の行が並ぶ</span></td></tr>
+  </table>
+
+  <p class="pager">‹ 1 2 3 ›</p>
+
+  <p class="empty"><span class="cond">0 件のとき</span> 注文はありません。<span class="link">本を探す</span></p>
+
+  <div class="dialog">
+    <span class="label">この注文を取り消しますか？</span>
+    <p>取り消すと元に戻せません。</p>
+    <div class="actions">
+      <span class="btn primary">はい、取り消す</span>
+      <span class="btn">いいえ</span>
+    </div>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>受付待ち・受付済</td><td>「詳細」の隣に「取消」が出る</td></tr>
+  <tr><td>出荷済・配達済・取消済</td><td><b>「取消」が出ない。</b>「詳細」だけが残る</td></tr>
+  <tr><td>0 件</td><td>表とページ送りが消え、「注文はありません」と「本を探す」への導線が残る</td></tr>
+</table>
+
+</div>

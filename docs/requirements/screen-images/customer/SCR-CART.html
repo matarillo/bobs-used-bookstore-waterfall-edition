@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-CART — 買い物かご</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-CART — 買い物かご</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/ShoppingCart</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-05</a> かご照会・編集</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">かご</p>
+
+  <ol class="steps">
+    <li aria-current="step">かご</li>
+    <li>配送先</li>
+    <li>完了</li>
+  </ol>
+
+  <p class="total"><b>合計（税込）</b>　金額<br>
+    <span class="note">小計　金額　／　税　金額</span></p>
+
+  <div class="stack">
+    <div class="row">
+      <span class="cond">ログイン済</span>
+      <span class="btn primary">注文へ進む</span>
+    </div>
+    <div class="row">
+      <span class="cond">未ログイン</span>
+      <span>注文するにはログインしてください</span>
+      <span class="btn">ログイン</span>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <td class="u1"><span class="img"></span></td>
+      <td class="u5">
+        書名<br>
+        <span class="warn"><span class="cond">在庫切れになった</span> 在庫切れ。注文には含まれません</span>
+      </td>
+      <td class="u2 num">売価</td>
+      <td class="u2 num">× <span class="select short">数量</span></td>
+      <td class="u2 num">小計</td>
+      <td class="u1"><span class="btn">取り除く</span></td>
+    </tr>
+    <tr>
+      <td><span class="img"></span></td>
+      <td>
+        書名<br>
+        <span class="note"><span class="cond">残りわずか</span> 残り N 冊</span>
+      </td>
+      <td class="num">売価</td>
+      <td class="num">× <span class="select short">数量</span></td>
+      <td class="num">小計</td>
+      <td><span class="btn">取り除く</span></td>
+    </tr>
+    <tr><td colspan="6"><span class="repeat">同じ形の行が並ぶ</span></td></tr>
+  </table>
+
+  <div class="dialog">
+    <span class="label">この本を取り除きますか？</span>
+    <p>この本をかごから取り除きますか？</p>
+    <div class="actions">
+      <span class="btn primary">はい、取り除く</span>
+      <span class="btn">いいえ</span>
+    </div>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>ログイン済</td><td>「注文へ進む」が出る</td></tr>
+  <tr><td>未ログイン</td><td>「注文へ進む」の位置に、案内文と「ログイン」が出る</td></tr>
+  <tr><td>かごに入れた後に在庫切れになった明細</td><td>書名の下に断りが出る。<b>合計から除かれる</b></td></tr>
+  <tr><td>残りわずかの明細</td><td>書名の下に「残り N 冊」が出る。数量の選択肢は在庫数までに限られる</td></tr>
+  <tr><td>かごが空</td><td>表の位置に「かごは空です」と「本を探す」への導線が出る</td></tr>
+</table>
+
+</div>

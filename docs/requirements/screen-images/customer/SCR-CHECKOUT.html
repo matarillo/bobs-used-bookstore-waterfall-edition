@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-CHECKOUT — 配送先の選択と注文確定</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-CHECKOUT — 配送先の選択と注文確定</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Checkout</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-07</a> 注文手続き</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">注文を仕上げる</p>
+
+  <ol class="steps">
+    <li>かご</li>
+    <li aria-current="step">配送先</li>
+    <li>完了</li>
+  </ol>
+
+  <p class="note"><span class="cond">注文できなかったとき</span> <span class="warn">メッセージ</span></p>
+
+  <p class="total"><b>合計（税込）</b>　金額<br>
+    <span class="note">小計　金額　／　税　金額　／　送料はかかりません</span></p>
+
+  <p class="note">代金のお支払いは、店からのご連絡のうえ承ります。
+    注文の確定は支払の完了を意味しません。</p>
+
+  <table>
+    <tr>
+      <th class="u1"></th>
+      <th class="u2">住所行1</th>
+      <th class="u2">住所行2</th>
+      <th class="u2">市区町村</th>
+      <th class="u1">州</th>
+      <th class="u1">国</th>
+      <th class="u2">郵便番号</th>
+      <th class="u1"></th>
+    </tr>
+    <tr>
+      <td><span class="radio on"></span></td>
+      <td>住所行1</td><td>住所行2</td><td>市区町村</td>
+      <td>州</td><td>国</td><td>郵便番号</td>
+      <td><span class="link">編集</span></td>
+    </tr>
+    <tr>
+      <td><span class="radio"></span></td>
+      <td>住所行1</td><td>住所行2</td><td>市区町村</td>
+      <td>州</td><td>国</td><td>郵便番号</td>
+      <td><span class="link">編集</span></td>
+    </tr>
+    <tr><td colspan="8"><span class="repeat">同じ形の行が並ぶ</span></td></tr>
+  </table>
+
+  <div class="actions">
+    <span class="btn primary">注文する</span>
+    <span class="note"><span class="cond">住所が 0 件のとき</span>
+      押せない状態になり、下に「注文するには住所を追加してください」が出る</span>
+  </div>
+
+  <p class="actions center"><span class="link">住所を追加</span></p>
+
+  <table>
+    <tr>
+      <th class="u1">表紙</th>
+      <th class="u5">書名</th>
+      <th class="u2 num">売価</th>
+      <th class="u2 num">数量</th>
+      <th class="u2 num">小計</th>
+    </tr>
+    <tr>
+      <td><span class="img"></span></td>
+      <td>書名</td>
+      <td class="num">売価</td>
+      <td class="num">数量</td>
+      <td class="num">小計</td>
+    </tr>
+    <tr>
+      <td><span class="img"></span></td>
+      <td><b>書名</b><br><span class="warn">在庫切れ。この本は注文に含まれません</span></td>
+      <td class="num"><span class="oos">売価</span></td>
+      <td class="num"><span class="oos">数量</span></td>
+      <td class="num"><span class="oos">小計</span></td>
+    </tr>
+    <tr><td colspan="5"><span class="repeat">同じ形の行が並ぶ</span></td></tr>
+  </table>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>住所が 1 件以上</td><td>先頭が選択済で描かれ、「注文する」が押せる</td></tr>
+  <tr><td>住所が 0 件</td><td>表に行が無く、「注文する」が押せない状態になり、その下に案内文が出る</td></tr>
+  <tr><td>在庫切れを含む明細</td><td>断りが添えられ、売価・数量・小計に打ち消し線が付く。<b>合計から除かれ、かごに残る</b></td></tr>
+  <tr><td>すべての明細が在庫切れ</td><td>「注文する」が押せない状態になる</td></tr>
+  <tr><td>注文に失敗した</td><td>進行の表示の下に ⚠ が出る。<b>選ばれていた配送先はそのまま</b></td></tr>
+</table>
+
+</div>

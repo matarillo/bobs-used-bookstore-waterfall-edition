@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-A-BOOK-EDIT — 書籍の登録／更新／棚入れ</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-A-BOOK-EDIT — 書籍の登録／更新／棚入れ</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Admin/Inventory/Create, /Update/{id}, /CreateFromOffer/{id}</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-ADM-07</a> 書籍の手入力登録 /
+    <a href="../../04-functional-requirements.md">FR-ADM-08</a> 書籍の更新 /
+    <a href="../../04-functional-requirements.md">FR-ADM-09</a> 棚卸調整 /
+    <a href="../../04-functional-requirements.md">FR-ADM-10</a> 非公開設定 /
+    <a href="../../04-functional-requirements.md">FR-ADM-15</a> 棚入れ</td></tr>
+  <tr><th>フレーム</th><td>管理</td></tr>
+</table>
+
+<p class="note"><b>版面は 2 つである。</b>登録と更新は同じ見出し・同じ項目で、初期値の有無だけが違う
+（同じ作業の別状態）。棚入れは<b>書き換えられる項目が入れ替わる</b>ため別の版面とする
+。</p>
+
+<h2>版面 1 — 登録／更新</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">書籍の登録／更新</p>
+
+  <p class="note"><span class="cond">保存できなかったとき</span> <span class="warn">メッセージ</span></p>
+
+  <div class="cols2">
+    <div>
+      <div class="form-group">
+        <span class="name">書名</span>
+        <span class="field"></span>
+        <span class="note"><span class="cond">入力に不備があるとき</span> <span class="warn">メッセージ</span></span>
+      </div>
+      <div class="form-group"><span class="name">著者</span><span class="field"></span></div>
+      <div class="form-group"><span class="name">ISBN</span><span class="field"></span></div>
+      <div class="form-pair">
+        <div class="form-group"><span class="name">売価</span><span class="field"></span></div>
+        <div class="form-group">
+          <span class="name">仕入原価</span>
+          <span class="field"></span>
+          <span class="note"><span class="cond">更新のとき</span> 書き換えられない</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <span class="name">在庫数</span>
+        <div class="row">
+          <span class="field short"></span>
+          <span class="cond">更新のとき</span>
+          <span class="field grow">棚卸調整の理由</span>
+        </div>
+      </div>
+      <div class="form-group"><span class="name">概要</span><span class="field multiline"></span></div>
+      <div class="form-group"><span class="check"></span> 非公開にする（店頭の検索結果に出さない）</div>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <span class="name">出版社</span>
+        <div class="row"><span class="select grow">出版社を選ぶ</span><span class="btn">追加</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">ジャンル</span>
+        <div class="row"><span class="select grow">ジャンルを選ぶ</span><span class="btn">追加</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">書籍種別</span>
+        <div class="row"><span class="select grow">書籍種別を選ぶ</span><span class="btn">追加</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">コンディション</span>
+        <div class="row"><span class="select grow">コンディションを選ぶ</span><span class="btn">追加</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="name">表紙画像</span>
+    <span class="file">ファイルを選ぶ</span>
+    <span class="note"><span class="cond">選んだとき・既にあるとき</span></span>
+    <div><span class="img"></span></div>
+  </div>
+
+  <div class="actions">
+    <span class="btn primary">保存</span>
+    <span class="btn">戻る</span>
+  </div>
+
+</div>
+
+<h2>版面 2 — オファーからの棚入れ</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">オファーから棚入れ</p>
+
+  <p class="note">オファー番号を仕入原価〈金額〉で棚入れする旨、本の内容はオファーの通りである旨、
+    売る値段を決める旨、1 冊を棚入れする旨の案内</p>
+
+  <div class="cols2">
+    <div>
+      <div class="form-group"><span class="name">書名</span><span class="field readonly"></span></div>
+      <div class="form-group"><span class="name">著者</span><span class="field readonly"></span></div>
+      <div class="form-group"><span class="name">ISBN</span><span class="field readonly"></span></div>
+      <div class="form-pair">
+        <div class="form-group">
+          <span class="name">売価</span>
+          <span class="field"></span>
+          <span class="note"><span class="cond">入力に不備があるとき</span> <span class="warn">メッセージ</span></span>
+        </div>
+        <div class="form-group"><span class="name">在庫数</span><span class="field readonly"></span></div>
+      </div>
+      <div class="form-group"><span class="name">概要</span><span class="field multiline"></span></div>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <span class="name">出版社</span>
+        <div class="row"><span class="select disabled grow">出版社</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">ジャンル</span>
+        <div class="row"><span class="select disabled grow">ジャンル</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">書籍種別</span>
+        <div class="row"><span class="select disabled grow">書籍種別</span></div>
+      </div>
+      <div class="form-group">
+        <span class="name">コンディション</span>
+        <div class="row"><span class="select disabled grow">コンディション</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <span class="name">表紙画像</span>
+    <span class="file">ファイルを選ぶ</span>
+  </div>
+
+  <div class="actions">
+    <span class="btn primary">保存</span>
+    <span class="btn">戻る</span>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>登録</td><td>版面 1。入力欄は空</td></tr>
+  <tr><td>更新</td><td>版面 1。既存の値が入り、現在の表紙画像が出る。<b>仕入原価が書き換えられなくなり、
+      在庫数を変えると棚卸調整の理由の入力を求められる</b></td></tr>
+  <tr><td>棚入れ</td><td>版面 2。見出しが替わり、案内が出て、書名・著者・ISBN・在庫数と分類 4 軸が
+      書き換えられなくなる。<b>仕入原価は買取価格が入り、書き換えられない</b></td></tr>
+  <tr><td>入力に不備がある</td><td>該当する欄の直下に ⚠ が出る。<b>入力内容と選択肢は保たれる</b></td></tr>
+  <tr><td>表紙画像が安全でないと判定された</td><td>表紙画像の欄に ⚠ が出る。<b>書籍も画像も保存されない</b></td></tr>
+</table>
+
+</div>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-A-DASH — ダッシュボード</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-A-DASH — ダッシュボード</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Admin/Dashboard</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-ADM-01</a> ダッシュボード</td></tr>
+  <tr><th>フレーム</th><td>管理</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">ダッシュボード</p>
+
+  <div class="cards cols3">
+    <div class="card">
+      <span class="label">注文</span>
+      <div class="row"><span class="grow">受付待ちの注文が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">納期超過の注文が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">今月の注文が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">累計の注文が N 件</span><span class="link">見る</span></div>
+    </div>
+
+    <div class="card">
+      <span class="label">売上</span>
+      <div class="row"><span class="grow">今月の売上　金額</span></div>
+      <div class="row"><span class="grow">累計の売上　金額</span></div>
+      <div class="row"><span class="grow">今月の粗利　金額<br>
+        <span class="note">分母となる原価既知売上　金額</span></span></div>
+    </div>
+
+    <div class="card">
+      <span class="label">買取</span>
+      <div class="row"><span class="grow">承認待ちの申込が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">今月の申込が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">累計の申込が N 件</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">承認待ちをすべて受け入れた場合に支払う額</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">今月の買取支出　金額</span></div>
+      <div class="row"><span class="grow">累計の買取支出　金額</span></div>
+    </div>
+
+    <div class="card">
+      <span class="label">在庫</span>
+      <div class="row"><span class="grow">在庫切れの書籍が N 冊</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">在庫僅少の書籍が N 冊</span><span class="link">見る</span></div>
+      <div class="row"><span class="grow">在庫の総冊数 N 冊</span><span class="link">見る</span></div>
+    </div>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>件数が 1 件のとき</td><td>文言が単数形になる。行の形は変わらない</td></tr>
+  <tr><td>統計が取得できないとき</td><td>数字の位置に <span class="warn">取得できませんでした</span> が出る。
+      <b>0 とは描かない</b></td></tr>
+  <tr><td>数字から一覧へ移ったとき</td><td>その数字と同じ条件で絞り込まれた一覧が出る。<b>件数が一致する</b></td></tr>
+</table>
+
+</div>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-SEARCH — 書籍を探す</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-SEARCH — 書籍を探す</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Search</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-02</a> 書籍検索</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">書籍を探す</p>
+
+  <div class="row">
+    <span class="grow"><span class="field"></span></span>
+    <span class="btn primary">検索</span>
+  </div>
+  <div class="row">
+    <span class="select short">すべてのジャンル</span>
+    <span class="select short">すべてのコンディション</span>
+    <span class="right"><span class="select short">並び順：書名</span></span>
+  </div>
+  <p class="note">書名・著者・ISBN を部分一致で探す</p>
+
+  <p class="screen-title">検索結果</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="img"></span>
+      <div>書名</div>
+      <div>売価</div>
+    </div>
+    <div class="card">
+      <span class="img"></span>
+      <div>書名</div>
+      <div>在庫切れ</div>
+    </div>
+    <div class="card">
+      <span class="img"></span>
+      <div>書名</div>
+      <div>売価</div>
+    </div>
+    <div class="card">
+      <span class="img"></span>
+      <div>書名</div>
+      <div>売価</div>
+    </div>
+  </div>
+  <p><span class="repeat">同じ形の枠が並ぶ</span></p>
+
+  <p class="pager">‹ 1 2 3 ›</p>
+
+  <p class="empty"><span class="cond">0 件のとき</span> 見つかりません</p>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>在庫切れの書籍</td><td>売価の位置が「在庫切れ」に替わる。枠は除かれない</td></tr>
+  <tr><td>非公開の書籍</td><td><b>結果に出ない</b></td></tr>
+  <tr><td>0 件</td><td>「検索結果」の見出し・格子・ページ送りが消え、「見つかりません」だけが残る。
+      検索の行は残る</td></tr>
+</table>
+
+</div>

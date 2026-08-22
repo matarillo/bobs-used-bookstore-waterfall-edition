@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-RESALE-NEW — 買取を申し込む</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-RESALE-NEW — 買取を申し込む</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Resale/Create</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-12</a> 買取申込</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">買取を申し込む</p>
+
+  <p class="note"><span class="cond">保存できなかったとき</span> <span class="warn">メッセージ</span></p>
+
+  <div class="form-group">
+    <span class="name">書名</span>
+    <span class="field"></span>
+    <span class="note"><span class="cond">入力に不備があるとき</span> <span class="warn">メッセージ</span></span>
+  </div>
+
+  <div class="form-group">
+    <span class="name">著者</span>
+    <span class="field"></span>
+  </div>
+
+  <div class="form-pair">
+    <div class="form-group">
+      <span class="name">ISBN</span>
+      <span class="field"></span>
+    </div>
+    <div class="form-group">
+      <span class="name">出版社</span>
+      <span class="select">出版社を選ぶ</span>
+    </div>
+  </div>
+
+  <div class="form-pair">
+    <div class="form-group">
+      <span class="name">希望買取価格</span>
+      <span class="field"></span>
+      <span class="note">1 以上 1,000,000 以下</span>
+    </div>
+    <div class="form-group">
+      <span class="name">コンディション</span>
+      <span class="select">コンディションを選ぶ</span>
+    </div>
+  </div>
+
+  <div class="form-pair">
+    <div class="form-group">
+      <span class="name">書籍種別</span>
+      <span class="select">書籍種別を選ぶ</span>
+    </div>
+    <div class="form-group">
+      <span class="name">ジャンル</span>
+      <span class="select">ジャンルを選ぶ</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <p class="note">承認されたら、画面に表示される送り先へ本をお送りください。
+    店が現物を検分したうえで代金をお支払いします。</p>
+
+  <div class="actions center">
+    <span class="btn primary">申し込む</span>
+  </div>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>入力に不備がある</td>
+      <td>該当する欄の直下に ⚠ が出る。<b>入力された値と選択肢はそのまま残る</b></td></tr>
+</table>
+
+</div>

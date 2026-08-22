@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<title>SCR-BOOK — 書籍の詳細</title>
+<meta name="document" content="要件定義書 画面イメージ">
+<meta name="status" content="agreed">
+<link rel="stylesheet" href="../wireframe.css">
+
+<div class="doc">
+
+<h1>SCR-BOOK — 書籍の詳細</h1>
+
+<table class="meta">
+  <tr><th>経路</th><td>/Search/Details/{id}</td></tr>
+  <tr><th>定める機能要件</th><td>
+    <a href="../../04-functional-requirements.md">FR-CUS-03</a> 書籍詳細照会 /
+    <a href="../../04-functional-requirements.md">FR-CUS-04</a> かご投入 /
+    <a href="../../04-functional-requirements.md">FR-CUS-06</a> 欲しい物リスト</td></tr>
+  <tr><th>フレーム</th><td>店頭</td></tr>
+</table>
+
+<h2>版面</h2>
+
+<div class="body-area">
+
+  <p class="screen-title">書名</p>
+
+  <div class="split">
+    <div class="media"><span class="img"></span></div>
+    <div class="body">
+      <table>
+        <tr><th class="u3">書名</th><td>書名</td></tr>
+        <tr><th>著者</th><td>著者</td></tr>
+        <tr><th>出版社</th><td>出版社</td></tr>
+        <tr><th>ジャンル</th><td>ジャンル</td></tr>
+        <tr><th>書籍種別</th><td>書籍種別</td></tr>
+        <tr><th>コンディション</th><td>コンディション</td></tr>
+        <tr><th>売価</th><td>売価</td></tr>
+        <tr><th>在庫</th><td>在庫あり　／　<span class="cond">在庫 5 冊以下</span> 残り N 冊　／
+          <span class="cond">在庫 0</span> 在庫切れ</td></tr>
+        <tr><th>概要</th><td>概要<br>
+          <span class="cond">概要が未登録のとき</span> <span class="empty">説明はありません</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <span class="btn primary">かごに入れる</span>
+    <span class="btn">欲しい物リストに入れる</span>
+  </div>
+
+  <p class="empty"><span class="cond">存在しない書籍を開いたとき</span> 見つかりません</p>
+
+</div>
+
+
+<h2>状態による差分</h2>
+
+<table class="diff">
+  <tr><th>状態</th><th>版面の変化</th></tr>
+  <tr><td>概要が未登録</td><td>概要の行は残り、値が「説明はありません」に替わる</td></tr>
+  <tr><td>在庫切れの書籍</td><td><b>「かごに入れる」が押せなくなる。</b>「欲しい物リストに入れる」は残る</td></tr>
+  <tr><td>存在しない書籍</td><td>見出し・2 段組・操作すべてが消え、「見つかりません」だけが残る</td></tr>
+</table>
+
+</div>
