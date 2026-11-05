@@ -1,0 +1,309 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "AdminBookEdit.dc.html": {
+      "expand": "fill",
+      "h": 1330,
+      "is_interactive": true,
+      "title": "SCR-A-BOOK-EDIT 書籍の登録／更新",
+      "w": 1440,
+      "x": 9120,
+      "y": 2700
+    },
+    "AdminDash.dc.html": {
+      "expand": "fill",
+      "h": 1190,
+      "is_interactive": true,
+      "title": "SCR-A-DASH ダッシュボード",
+      "w": 1440,
+      "x": 0,
+      "y": 2700
+    },
+    "AdminOffers.dc.html": {
+      "expand": "fill",
+      "h": 1180,
+      "is_interactive": true,
+      "title": "SCR-A-OFFERS 買取オファー一覧",
+      "w": 1440,
+      "x": 4560,
+      "y": 2700
+    },
+    "AdminOrder.dc.html": {
+      "expand": "fill",
+      "h": 1170,
+      "is_interactive": true,
+      "title": "SCR-A-ORDER 注文の詳細",
+      "w": 1440,
+      "x": 3040,
+      "y": 2700
+    },
+    "AdminStock.dc.html": {
+      "expand": "fill",
+      "h": 1400,
+      "is_interactive": true,
+      "title": "SCR-A-BOOK-EDIT 棚入れ",
+      "w": 1440,
+      "x": 10640,
+      "y": 2700
+    },
+    "Book.dc.html": {
+      "expand": "fill",
+      "h": 1350,
+      "is_interactive": true,
+      "title": "SCR-BOOK 書籍の詳細",
+      "w": 1280,
+      "x": 2720,
+      "y": 0
+    },
+    "Cart.dc.html": {
+      "expand": "fill",
+      "h": 1190,
+      "is_interactive": true,
+      "title": "SCR-CART 買い物かご",
+      "w": 1280,
+      "x": 4080,
+      "y": 0
+    },
+    "Checkout.dc.html": {
+      "expand": "fill",
+      "h": 1650,
+      "is_interactive": true,
+      "title": "SCR-CHECKOUT 配送先の選択と注文確定",
+      "w": 1280,
+      "x": 6800,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 2300,
+      "is_interactive": true,
+      "title": "SCR-HOME トップ",
+      "w": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "Orders.dc.html": {
+      "expand": "fill",
+      "h": 1150,
+      "is_interactive": true,
+      "title": "SCR-ORDERS 自分の注文",
+      "w": 1280,
+      "x": 12240,
+      "y": 0
+    },
+    "Search.dc.html": {
+      "expand": "fill",
+      "h": 2100,
+      "is_interactive": true,
+      "title": "SCR-SEARCH 書籍を探す",
+      "w": 1280,
+      "x": 1360,
+      "y": 0
+    },
+    "Sell.dc.html": {
+      "expand": "fill",
+      "h": 1220,
+      "is_interactive": true,
+      "title": "SCR-RESALE-NEW 買取を申し込む",
+      "w": 1280,
+      "x": 16320,
+      "y": 0
+    },
+    "Tokens.dc.html": {
+      "expand": "fill",
+      "h": 2660,
+      "title": "デザイントークンと部品",
+      "w": 1280,
+      "x": 0,
+      "y": 4560
+    },
+    "Wish.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-WISH 欲しい物リスト",
+      "w": 1280,
+      "h": 1380,
+      "x": 5440,
+      "y": 0
+    },
+    "CheckoutDone.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-CHECKOUT-DONE 注文完了",
+      "w": 1280,
+      "h": 1480,
+      "x": 8160,
+      "y": 0
+    },
+    "Addresses.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-ADDRESSES 自分の住所",
+      "w": 1280,
+      "h": 1240,
+      "x": 9520,
+      "y": 0
+    },
+    "AddressEdit.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-ADDRESS-EDIT 住所の登録／更新",
+      "w": 1280,
+      "h": 1390,
+      "x": 10880,
+      "y": 0
+    },
+    "Order.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-ORDER 注文の詳細",
+      "w": 1280,
+      "h": 1710,
+      "x": 13600,
+      "y": 0
+    },
+    "Resale.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-RESALE 自分の買取申込",
+      "w": 1280,
+      "h": 1590,
+      "x": 14960,
+      "y": 0
+    },
+    "Privacy.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-PRIVACY プライバシー",
+      "w": 1280,
+      "h": 1840,
+      "x": 17680,
+      "y": 0
+    },
+    "Error.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-ERROR エラー",
+      "w": 1280,
+      "h": 970,
+      "x": 19040,
+      "y": 0
+    },
+    "AdminOrders.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-ORDERS 注文一覧",
+      "w": 1440,
+      "h": 1610,
+      "x": 1520,
+      "y": 2700
+    },
+    "AdminBooks.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-BOOKS 在庫一覧",
+      "w": 1440,
+      "h": 1430,
+      "x": 6080,
+      "y": 2700
+    },
+    "AdminBook.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-BOOK 書籍の詳細",
+      "w": 1440,
+      "h": 980,
+      "x": 7600,
+      "y": 2700
+    },
+    "AdminRefdata.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-REFDATA 参照データ一覧",
+      "w": 1440,
+      "h": 1050,
+      "x": 12160,
+      "y": 2700
+    },
+    "AdminRefdataEdit.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-REFDATA-EDIT 参照データの登録／改名",
+      "w": 1440,
+      "h": 740,
+      "x": 13680,
+      "y": 2700
+    },
+    "AdminError.dc.html": {
+      "expand": "fill",
+      "is_interactive": true,
+      "title": "SCR-A-ERROR エラー（管理）",
+      "w": 1440,
+      "h": 590,
+      "x": 15200,
+      "y": 2700
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-05T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "store",
+    "admin"
+  ],
+  "notes": {
+    "admin": {
+      "kind": "title1",
+      "maxW": 16640,
+      "text": "管理（スタッフ向け）",
+      "w": 240,
+      "x": 0,
+      "y": 2400
+    },
+    "store": {
+      "kind": "title1",
+      "maxW": 20320,
+      "text": "店頭（顧客向け）",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Search.dc.html",
+    "Book.dc.html",
+    "Cart.dc.html",
+    "Wish.dc.html",
+    "Checkout.dc.html",
+    "CheckoutDone.dc.html",
+    "Addresses.dc.html",
+    "AddressEdit.dc.html",
+    "Orders.dc.html",
+    "Order.dc.html",
+    "Resale.dc.html",
+    "Sell.dc.html",
+    "Privacy.dc.html",
+    "Error.dc.html",
+    "AdminDash.dc.html",
+    "AdminOrders.dc.html",
+    "AdminOrder.dc.html",
+    "AdminOffers.dc.html",
+    "AdminBooks.dc.html",
+    "AdminBook.dc.html",
+    "AdminBookEdit.dc.html",
+    "AdminStock.dc.html",
+    "AdminRefdata.dc.html",
+    "AdminRefdataEdit.dc.html",
+    "AdminError.dc.html",
+    "Tokens.dc.html"
+  ],
+  "pages": [],
+  "title": "Bob's Used Books — UI Mockups & Style Guide"
+}

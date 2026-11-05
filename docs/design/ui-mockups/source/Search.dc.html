@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>本を探す</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="Main.dc.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="Orders.dc.html">注文</a>
+<a href="Search.dc.html" aria-current="page">探す</a>
+<a href="Resale.dc.html">本を売る</a>
+<a href="Wish.dc.html">欲しい物</a>
+<a href="Cart.dc.html">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="Addresses.dc.html">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<h1 class="pt">本を探す</h1>
+<form class="searchbar" role="search">
+<label class="vh" for="q">書名・著者・ISBN</label>
+<input class="input" id="q" type="search" value="{{query}}" placeholder="書名・著者・ISBN">
+<button class="btn btn-primary" type="button">検索</button>
+</form>
+<div class="filters-row">
+<div class="fg"><label class="lbl" for="genre">ジャンル</label><select class="select" id="genre"><option>すべてのジャンル</option><option>日本文学</option><option>海外文学</option><option>SF・ファンタジー</option><option>自然・科学</option></select></div>
+<div class="fg"><label class="lbl" for="cond">コンディション</label><select class="select" id="cond"><option>すべてのコンディション</option><option>ほぼ新品</option><option>非常に良い</option><option>良い</option><option>可</option></select></div>
+<div class="fg push"><label class="lbl" for="sort">並び順</label><select class="select" id="sort"><option>書名順</option><option>価格の安い順</option><option>価格の高い順</option></select></div>
+</div>
+<p class="hint" style="margin-top: 12px">書名・著者・ISBN の一部で探せます。価格はすべて税込です。</p>
+
+<sc-if value="{{found}}" hint-placeholder-val="{{ true }}">
+<section aria-labelledby="results" style="margin-top: 56px">
+<h2 class="h2" id="results">検索結果</h2>
+<ul class="shelf" style="margin-top: 12px">
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">440円</span><div class="cover c-blue"><span class="ct">銀河鉄道の夜</span><span class="ca">宮沢賢治</span></div></div><span class="t">銀河鉄道の夜</span><span class="a">宮沢賢治</span><span class="cond">コンディション：非常に良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">880円</span><div class="cover c-green"><span class="ct">ゲド戦記 影との戦い</span><span class="ca">ル＝グウィン</span></div></div><span class="t">ゲド戦記 影との戦い</span><span class="a">アーシュラ・K・ル＝グウィン</span><span class="cond">コンディション：良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">330円</span><div class="cover c-ox"><span class="ct">こころ</span><span class="ca">夏目漱石</span></div></div><span class="t">こころ</span><span class="a">夏目漱石</span><span class="cond">コンディション：良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">1,650円</span><div class="cover c-plum"><span class="ct">細雪</span><span class="ca">谷崎潤一郎</span></div></div><span class="t">細雪</span><span class="a">谷崎潤一郎</span><span class="cond">コンディション：良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">1,980円</span><div class="cover c-ochre"><span class="ct">砂の女</span><span class="ca">安部公房</span></div></div><span class="t">砂の女</span><span class="a">安部公房</span><span class="cond">コンディション：ほぼ新品</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">660円</span><div class="cover c-teal"><span class="ct">日の名残り</span><span class="ca">カズオ・イシグロ</span></div></div><span class="t">日の名残り</span><span class="a">カズオ・イシグロ</span><span class="cond">コンディション：非常に良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip slip-out">在庫切れ</span><div class="cover c-slate"><span class="ct">雪国</span><span class="ca">川端康成</span></div></div><span class="t">雪国</span><span class="a">川端康成</span><span class="cond">コンディション：良い</span></a></li>
+<li><a class="copy" href="Book.dc.html"><div class="bk"><span class="slip">220円</span><div class="cover cover-none"><span class="ct">Bob's Used Books</span></div></div><span class="t">檸檬</span><span class="a">梶井基次郎</span><span class="cond">コンディション：可</span></a></li>
+</ul>
+<nav class="pager" aria-label="ページ">
+<span class="off">前へ</span>
+<a href="#" aria-current="page">1</a>
+<a href="#">2</a>
+<a href="#">3</a>
+<a href="#">次へ</a>
+</nav>
+</section>
+</sc-if>
+
+<sc-if value="{{none}}" hint-placeholder-val="{{ false }}">
+<div class="empty">
+<h2 class="h2">「{{query}}」に一致する本はありません</h2>
+<p class="muted">言葉を減らすか、書名や著者の表記を確かめてください。ジャンルとコンディションの絞り込みを外すと、探す範囲が広がります。</p>
+<div class="row" style="margin-top: 20px"><a class="btn" href="Search.dc.html">検索条件を消す</a></div>
+</div>
+</sc-if>
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="Main.dc.html">トップ</a></li><li><a href="Search.dc.html">探す</a></li><li><a href="Cart.dc.html">かご</a></li><li><a href="Orders.dc.html">注文</a></li><li><a href="Privacy.dc.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"results":{"editor":"enum","options":["found","none"],"default":"found","section":"State"},"$preview":{"width":1280,"height":2100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const r = this.props.results ?? 'found';
+    return {
+      found: r === 'found',
+      none: r === 'none',
+      query: r === 'none' ? '日本の野鳥 初版' : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

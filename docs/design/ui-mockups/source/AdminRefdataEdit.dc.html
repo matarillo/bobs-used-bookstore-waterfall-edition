@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>参照データの登録／改名</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="AdminDash.dc.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="AdminDash.dc.html">ダッシュボード</a>
+<a href="AdminOrders.dc.html">注文</a>
+<a href="AdminOffers.dc.html">買取</a>
+<a href="AdminBooks.dc.html">在庫</a>
+<a href="AdminRefdata.dc.html" aria-current="page">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="Main.dc.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<a class="back" href="AdminRefdata.dc.html">参照データ一覧に戻る</a>
+<h1 class="pt" style="margin-top: 12px">{{heading}}</h1>
+
+<form class="stack formcol" aria-label="参照データ">
+<div class="fg">
+<sc-if value="{{isNew}}" hint-placeholder-val="{{ false }}">
+<label class="lbl" for="r-kind">種別</label>
+<select class="select" id="r-kind" style="max-width: 280px"><option>出版社</option><option>書籍種別</option><option>ジャンル</option><option>コンディション</option></select>
+</sc-if>
+<sc-if value="{{isRename}}" hint-placeholder-val="{{ true }}">
+<span class="lbl">種別</span>
+<p class="ro" style="max-width: 280px">出版社</p>
+</sc-if>
+</div>
+<sc-if value="{{isRename}}" hint-placeholder-val="{{ true }}">
+<div class="fg"><span class="lbl">いまの名称</span><p class="ro">中央公論社</p></div>
+</sc-if>
+<div class="fg">
+<label class="lbl" for="r-name">{{nameLabel}}</label>
+<input class="{{nameCls}}" id="r-name" type="text" value="{{name}}" />
+<sc-if value="{{ok}}" hint-placeholder-val="{{ true }}"><p class="hint">{{nameHint}}</p></sc-if>
+<sc-if value="{{dup}}" hint-placeholder-val="{{ false }}"><p class="ferr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>「新潮社」はすでに登録されています。同じ名称は登録できません。</p></sc-if>
+</div>
+<div class="form-acts" style="margin-top: 8px">
+<button class="btn btn-primary" type="button">{{saveLabel}}</button>
+<a class="btn" href="AdminRefdata.dc.html">やめる</a>
+</div>
+</form>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["new","rename"],"default":"rename","section":"State"},"duplicate":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1440,"height":740}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const isNew = (this.props.mode ?? 'rename') === 'new';
+    const dup = this.props.duplicate ?? false;
+    return {
+      isNew,
+      isRename: !isNew,
+      heading: isNew ? '参照データの登録' : '参照データの改名：中央公論社',
+      nameLabel: isNew ? '名称' : '新しい名称',
+      name: dup ? '新潮社' : (isNew ? '' : '中央公論新社'),
+      nameCls: dup ? 'input is-invalid' : 'input',
+      nameHint: isNew ? '登録すると、書籍と買取申込の選択肢に加わります。登録したあとも改名できます。' : '改名すると、この名称を使っている書籍と買取申込のすべてに反映されます。',
+      saveLabel: isNew ? '登録する' : '名称を変更',
+      ok: !dup,
+      dup
+    };
+  }
+}
+</script>
+</body>
+</html>

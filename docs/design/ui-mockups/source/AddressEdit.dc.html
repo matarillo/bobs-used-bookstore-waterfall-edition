@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>住所の登録／更新</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="Main.dc.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="Orders.dc.html">注文</a>
+<a href="Search.dc.html">探す</a>
+<a href="Resale.dc.html">本を売る</a>
+<a href="Wish.dc.html">欲しい物</a>
+<a href="Cart.dc.html">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="Addresses.dc.html" aria-current="page">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<a class="back" href="{{backHref}}">{{backLabel}}</a>
+<h1 class="pt" style="margin-top: 16px">{{heading}}</h1>
+<sc-if value="{{fromCheckout}}" hint-placeholder-val="{{ false }}">
+<ol class="steps" aria-label="注文までの進み具合">
+<li class="done">かご</li>
+<li aria-current="step">配送先</li>
+<li>完了</li>
+</ol>
+</sc-if>
+
+<form class="stack formcol" aria-label="住所">
+<sc-if value="{{errors}}" hint-placeholder-val="{{ false }}">
+<div class="msg">
+<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>
+<div><b>保存できませんでした。</b><p>印のついた 2 つの欄を直してください。ほかの入力内容はそのまま残っています。</p></div>
+</div>
+</sc-if>
+<p class="muted">宛名は、ログインに使っているお名前（森川 葵）になります。お名前はこの画面では変えられません。</p>
+
+<div class="fg">
+<label class="lbl" for="a-zip">郵便番号</label>
+<input class="{{zipCls}}" id="a-zip" type="text" value="{{v.zip}}" style="max-width: 200px" />
+<sc-if value="{{ok}}" hint-placeholder-val="{{ true }}"><p class="hint">7 桁の数字で入力します。ハイフンはあってもなくても構いません。</p></sc-if>
+<sc-if value="{{errors}}" hint-placeholder-val="{{ false }}"><p class="ferr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>郵便番号を 7 桁の数字で入力してください。</p></sc-if>
+</div>
+<div class="fg">
+<label class="lbl" for="a-pref">都道府県</label>
+<select class="select" id="a-pref" style="max-width: 240px"><option>{{v.pref}}</option><option>北海道</option><option>東京都</option><option>長野県</option><option>大阪府</option></select>
+</div>
+<div class="fg">
+<label class="lbl" for="a-city">市区町村</label>
+<input class="input" id="a-city" type="text" value="{{v.city}}" />
+</div>
+<div class="fg">
+<label class="lbl" for="a-l1">番地</label>
+<input class="{{l1Cls}}" id="a-l1" type="text" value="{{v.line1}}" />
+<sc-if value="{{errors}}" hint-placeholder-val="{{ false }}"><p class="ferr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>番地を入力してください。</p></sc-if>
+</div>
+<div class="fg">
+<label class="lbl" for="a-l2">建物名・部屋番号（任意）</label>
+<input class="input" id="a-l2" type="text" value="{{v.line2}}" />
+</div>
+<div class="fg">
+<label class="lbl" for="a-country">国</label>
+<select class="select" id="a-country" style="max-width: 240px"><option>日本</option></select>
+</div>
+
+<div class="form-acts" style="margin-top: 8px">
+<button class="btn btn-primary" type="button">{{saveLabel}}</button>
+<a class="btn" href="{{backHref}}">やめる</a>
+</div>
+</form>
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="Main.dc.html">トップ</a></li><li><a href="Search.dc.html">探す</a></li><li><a href="Cart.dc.html">かご</a></li><li><a href="Orders.dc.html">注文</a></li><li><a href="Privacy.dc.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["new","update"],"default":"update","section":"State"},"fromCheckout":{"editor":"boolean","default":false,"section":"State"},"showErrors":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1280,"height":1390}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const isNew = (this.props.mode ?? 'update') === 'new';
+    const fromCheckout = this.props.fromCheckout ?? false;
+    const errors = this.props.showErrors ?? false;
+    const base = isNew
+      ? { zip: '', pref: '都道府県を選ぶ', city: '', line1: '', line2: '' }
+      : { zip: '150-0001', pref: '東京都', city: '渋谷区', line1: '神宮前5-8-2', line2: '青葉ビル 4F 森川デザイン事務所' };
+    const v = errors ? Object.assign({}, base, { zip: '15000', pref: '東京都', city: '渋谷区', line1: '' }) : base;
+    return {
+      heading: isNew ? '住所の登録' : '住所の更新',
+      saveLabel: isNew ? '登録する' : '変更を保存',
+      fromCheckout,
+      backHref: fromCheckout ? 'Checkout.dc.html' : 'Addresses.dc.html',
+      backLabel: fromCheckout ? '注文の確定に戻る' : '自分の住所に戻る',
+      errors,
+      ok: !errors,
+      zipCls: errors ? 'input is-invalid' : 'input',
+      l1Cls: errors ? 'input is-invalid' : 'input',
+      v
+    };
+  }
+}
+</script>
+</body>
+</html>

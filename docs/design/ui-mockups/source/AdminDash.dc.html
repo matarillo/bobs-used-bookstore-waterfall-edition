@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>ダッシュボード</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="AdminDash.dc.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="AdminDash.dc.html" aria-current="page">ダッシュボード</a>
+<a href="AdminOrders.dc.html">注文</a>
+<a href="AdminOffers.dc.html">買取</a>
+<a href="AdminBooks.dc.html">在庫</a>
+<a href="AdminRefdata.dc.html">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="Main.dc.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<h1 class="pt">ダッシュボード</h1>
+<div class="ledger">
+
+<section class="sect" aria-labelledby="d-orders">
+<h2 class="h2" id="d-orders">注文</h2>
+<a class="fig fig-big" href="AdminOrders.dc.html"><span class="k">受付待ち<small>店の受付を待っている注文</small></span><span class="v">7<span class="u">件</span></span></a>
+<a class="fig fig-big fig-alert" href="AdminOrders.dc.html"><span class="k">納期超過<small>納品予定日を過ぎても届いていない注文</small></span><span class="v">2<span class="u">件</span></span></a>
+<a class="fig" href="AdminOrders.dc.html"><span class="k">今月の注文</span><span class="v">64<span class="u">件</span></span></a>
+<a class="fig" href="AdminOrders.dc.html"><span class="k">累計の注文</span><span class="v">1,284<span class="u">件</span></span></a>
+</section>
+
+<section class="sect" aria-labelledby="d-sales">
+<h2 class="h2" id="d-sales">売上</h2>
+<p class="sub">税抜。取消済の注文は含めません。</p>
+<sc-if value="{{failed}}" hint-placeholder-val="{{ false }}">
+<div class="msg" style="margin: 8px 0 4px">
+<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>
+<div><b>売上の数字を取得できませんでした。</b><p>ページを読み込み直してください。取得できるまで、0 とは表示しません。</p></div>
+</div>
+</sc-if>
+<div class="fig"><span class="k">今月の売上</span><sc-if value="{{ok}}" hint-placeholder-val="{{ true }}"><span class="v">231,840<span class="u">円</span></span></sc-if><sc-if value="{{failed}}" hint-placeholder-val="{{ false }}"><span class="fail">取得できませんでした</span></sc-if></div>
+<div class="fig"><span class="k">累計の売上</span><sc-if value="{{ok}}" hint-placeholder-val="{{ true }}"><span class="v">4,890,510<span class="u">円</span></span></sc-if><sc-if value="{{failed}}" hint-placeholder-val="{{ false }}"><span class="fail">取得できませんでした</span></sc-if></div>
+<div class="fig fig-big"><span class="k">今月の粗利<small>分母となる原価既知売上 210,400円</small></span><sc-if value="{{ok}}" hint-placeholder-val="{{ true }}"><span class="v">78,120<span class="u">円</span></span></sc-if><sc-if value="{{failed}}" hint-placeholder-val="{{ false }}"><span class="fail">取得できませんでした</span></sc-if></div>
+</section>
+
+<section class="sect" aria-labelledby="d-buying">
+<h2 class="h2" id="d-buying">買取</h2>
+<a class="fig fig-big" href="AdminOffers.dc.html"><span class="k">承認待ちの申込<small>店の判断を待っている申込</small></span><span class="v">5<span class="u">件</span></span></a>
+<a class="fig" href="AdminOffers.dc.html"><span class="k">承認待ちをすべて承認したときの支払額</span><span class="v">8,600<span class="u">円</span></span></a>
+<a class="fig" href="AdminOffers.dc.html"><span class="k">今月の申込</span><span class="v">23<span class="u">件</span></span></a>
+<a class="fig" href="AdminOffers.dc.html"><span class="k">累計の申込</span><span class="v">311<span class="u">件</span></span></a>
+<div class="fig"><span class="k">今月の買取支出<small>支払日で数えます</small></span><span class="v">41,200<span class="u">円</span></span></div>
+<div class="fig"><span class="k">累計の買取支出</span><span class="v">698,050<span class="u">円</span></span></div>
+</section>
+
+<section class="sect" aria-labelledby="d-stock">
+<h2 class="h2" id="d-stock">在庫</h2>
+<a class="fig fig-big fig-alert" href="AdminBooks.dc.html"><span class="k">在庫切れ<small>在庫数が 0 の書籍</small></span><span class="v">12<span class="u">冊</span></span></a>
+<a class="fig fig-big" href="AdminBooks.dc.html"><span class="k">在庫僅少<small>在庫 5 冊以下。在庫切れを含みます</small></span><span class="v">41<span class="u">冊</span></span></a>
+<a class="fig" href="AdminBooks.dc.html"><span class="k">在庫の総冊数</span><span class="v">2,906<span class="u">冊</span></span></a>
+</section>
+
+</div>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"statsFailed":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1440,"height":1190}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const f = this.props.statsFailed ?? false;
+    return { failed: f, ok: !f };
+  }
+}
+</script>
+</body>
+</html>

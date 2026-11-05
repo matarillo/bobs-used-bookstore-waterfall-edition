@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>デザイントークンと部品</title>
+<link rel="stylesheet" href="bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob" style="padding: 56px 0 80px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+
+<section>
+<h1 class="pt" style="margin: 0 0 8px">デザイントークンと部品</h1>
+<p class="lede" style="font-size: 17px">店が判断した情報（売価・コンディション・買取の値）だけを、すみれ色のインクで書く。書誌と見出しは Shippori Mincho で、操作と表は Zen Kaku Gothic New で書く。目立たせる要素はスリップだけにして、ほかは静かに保つ。</p>
+</section>
+
+<section aria-labelledby="t-color">
+<h2 class="h2" id="t-color" style="margin-bottom: 18px">色</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #FFFFFF; border: 1px solid #C8CED5"></span><b>紙 #FFFFFF</b><span class="hint">地。店頭も管理もこの上に組む</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #EDF0F2"></span><b>グラシン #EDF0F2</b><span class="hint">合計欄、絞り込み、読み取り専用の欄、既定の表紙</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #1D2633"></span><b>インク #1D2633</b><span class="hint">本文、主たるボタン、管理画面のヘッダ</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #4B5563"></span><b>インク 2 #4B5563</b><span class="hint">補足文、著者名、表の見出し（白地で 7.6:1）</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #5A3A9C"></span><b>すみれインク #5A3A9C</b><span class="hint">店の判断だけに使う。売価、コンディション、スリップの文字</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #F3EFFB; border: 1px solid #D6CAEE"></span><b>スリップの紙 #F3EFFB</b><span class="hint">スリップと「この一冊」の欄</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #A3261C"></span><b>警告 #A3261C</b><span class="hint">入力の不備、業務エラー、納期超過、在庫切れの件数</span></div>
+<div class="fg"><span style="height: 88px; border-radius: 4px; background: #1E6447"></span><b>完了 #1E6447</b><span class="hint">操作が成功したときの通知バナー</span></div>
+</div>
+</section>
+
+<section aria-labelledby="t-type">
+<h2 class="h2" id="t-type" style="margin-bottom: 18px">書体</h2>
+<div class="grid2" style="gap: 32px 56px">
+<div class="stack" style="gap: 12px">
+<p class="display" style="font-size: 44px">一冊ずつ、確かめて。</p>
+<p class="hint">主書体 Shippori Mincho（しっぽり明朝）。活版印刷の名残を持つオールドスタイルの明朝体。見出し、書名、店頭の地の文、合計額、スリップの売価。400 と 600 を使う</p>
+<p style="font-family: 'Shippori Mincho', serif; font-size: 17px; line-height: 1.95; max-width: 34em">このサイトに並ぶ本は、どれも一度わたしたちの手を通っています。傷み具合を見て、値段をつけ、その一冊をそのままお届けします。</p>
+<p class="hint">地の文は 17〜18px、行送り 1.95、1 行 34 字前後まで。見出しはプロポーショナル詰め（palt）と文節での改行（auto-phrase）</p>
+</div>
+<div class="stack" style="gap: 12px">
+<p style="font-size: 16px; line-height: 1.7; max-width: 32em">操作の文言、入力欄、表、管理画面は Zen Kaku Gothic New で組む。小さな字でも潰れにくい。</p>
+<p class="num" style="font-size: 36px; font-weight: 700; line-height: 1.2">1,284<span class="u">件</span>　4,890,510<span class="u">円</span></p>
+<p class="hint">副書体 Zen Kaku Gothic New。本文 16px、補足 13.5〜14px。400・500・700 を使う。数字には単位を小さく添える</p>
+<p class="hint">字の大きさの段: 60 / 44 / 36 / 24 / 18 / 16 / 14 / 13 px</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="t-slip">
+<h2 class="h2" id="t-slip" style="margin-bottom: 8px">スリップと表紙</h2>
+<p class="muted" style="margin-bottom: 8px">古書店が本に挟む値札の短冊。表紙の上辺から覗かせ、税込の売価（とコンディション）を書く。在庫切れのときはグラシン色にして「在庫切れ」に替える。仮の表紙は書名を縦書きにし、右綴じの本として背を右に置く。</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding-top: 84px; max-width: 980px">
+<div class="bk"><span class="slip">660円</span><div class="cover c-teal"><span class="ct">日の名残り</span><span class="ca">カズオ・イシグロ</span></div></div>
+<div class="bk"><span class="slip slip-out">在庫切れ</span><div class="cover c-slate"><span class="ct">雪国</span><span class="ca">川端康成</span></div></div>
+<div class="bk"><span class="slip">220円</span><div class="cover cover-none"><span class="ct">Bob's Used Books</span></div></div>
+<div class="bk"><div class="slip slip-lg"><span>1,980円</span><span class="slip-c">ほぼ新品</span></div><div class="cover c-ochre"><span class="ct">砂の女</span><span class="ca">安部公房</span></div></div>
+</div>
+<p class="hint" style="margin-top: 14px">左から、在庫あり、在庫切れ、表紙がないとき（既定の表紙）、書籍の詳細とトップで使う大きいスリップ。布色の表紙は写真の代わりに置いた仮のもの</p>
+</section>
+
+<section aria-labelledby="t-status">
+<h2 class="h2" id="t-status" style="margin-bottom: 18px">状態の印</h2>
+<div class="grid2" style="gap: 24px 56px">
+<div class="stack" style="gap: 12px">
+<p><span class="st">受付待ち／承認待ち</span><span class="hint">　白丸。相手か店の対応を待っている</span></p>
+<p><span class="st st-go">受付済／出荷済／受領済</span><span class="hint">　半分。進行中</span></p>
+<p><span class="st st-done">配達済／支払完了</span><span class="hint">　黒丸。完了</span></p>
+<p><span class="st st-stop">取消済／却下／取下げ</span><span class="hint">　横線。止まった</span></p>
+</div>
+<div class="stack" style="gap: 12px">
+<p><span class="badge">納期超過</span><span class="hint">　状態とは別の印として並べる</span></p>
+<ol class="track" aria-label="注文の進み具合の見本"><li class="done">受付待ち</li><li class="done now">受付済</li><li>出荷済</li><li>配達済</li></ol>
+<p class="hint">注文の詳細（管理）の進行表示。状態は前にしか進まない</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="t-ctl">
+<h2 class="h2" id="t-ctl" style="margin-bottom: 18px">操作と入力</h2>
+<div class="row" style="gap: 12px">
+<button class="btn btn-primary" type="button">注文する</button>
+<button class="btn" type="button">欲しい物リストに入れる</button>
+<button class="btn btn-danger btn-primary" type="button">取り消す</button>
+<button class="btn" type="button" disabled="disabled">注文する</button>
+<button class="linkbtn" type="button">取り除く</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 28px">
+<div class="fg"><label class="lbl" for="tk-1">書名</label><input class="input" id="tk-1" type="text" value="フィールドガイド 日本の野鳥"><p class="hint">補足は欄の直下に置く</p></div>
+<div class="fg"><label class="lbl" for="tk-2">希望買取価格（円）</label><input class="input is-invalid" id="tk-2" type="text" value="0"><p class="ferr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>1 以上 1,000,000 以下の金額を入力してください。</p></div>
+<div class="fg"><span class="lbl">仕入原価</span><p class="ro"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>400円</p><p class="hint">書き換えられない値はグラシン地に錠前を添える</p></div>
+</div>
+</section>
+
+<section aria-labelledby="t-msg">
+<h2 class="h2" id="t-msg" style="margin-bottom: 18px">知らせ</h2>
+<div class="stack" style="gap: 16px; max-width: 760px">
+<div class="banner" role="status" style="border: 0; border-radius: 4px"><div class="wrap" style="padding-left: 16px; padding-right: 16px; margin: 0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>注文 10433 を取り消しました。</div></div>
+<p class="hint">通知バナー。操作が成功して画面が移ったとき、移動先の上部に 1 度だけ出す。ボタンと同じ動詞を使う（取り消す → 取り消しました）</p>
+<div class="msg"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg><div><b>ほかのスタッフが先にこの注文を処理しました。</b><p>すでに受付済になっています。下の状態が最新です。</p></div></div>
+<p class="hint">業務エラー。画面に留まって上部に出し、入力は保つ。何が起きたかと次にどうするかを書き、詫びない</p>
+</div>
+</section>
+
+</div>
+</div>
+</body></html>

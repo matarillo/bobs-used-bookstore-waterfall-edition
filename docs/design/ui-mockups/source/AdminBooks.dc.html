@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>在庫一覧</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="AdminDash.dc.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="AdminDash.dc.html">ダッシュボード</a>
+<a href="AdminOrders.dc.html">注文</a>
+<a href="AdminOffers.dc.html">買取</a>
+<a href="AdminBooks.dc.html" aria-current="page">在庫</a>
+<a href="AdminRefdata.dc.html">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="Main.dc.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<div class="headrow">
+<h1 class="pt">在庫</h1>
+<a class="btn btn-primary" href="AdminBookEdit.dc.html">新しい書籍を登録</a>
+</div>
+
+<form class="filters" aria-label="在庫の絞り込み">
+<div class="fg"><label class="lbl" for="k-t">書名</label><input class="input" id="k-t" type="text" /></div>
+<div class="fg"><label class="lbl" for="k-a">著者</label><input class="input" id="k-a" type="text" /></div>
+<div class="fg"><label class="lbl" for="k-p">出版社</label><select class="select" id="k-p"><option>すべての出版社</option><option>新潮社</option><option>岩波書店</option></select></div>
+<div class="fg"><label class="lbl" for="k-g">ジャンル</label><select class="select" id="k-g"><option>すべてのジャンル</option><option>日本文学</option><option>海外文学</option></select></div>
+<div class="fg"><label class="lbl" for="k-y">書籍種別</label><select class="select" id="k-y"><option>すべての書籍種別</option><option>単行本</option><option>文庫</option></select></div>
+<div class="fg"><label class="lbl" for="k-c">コンディション</label><select class="select" id="k-c"><option>すべてのコンディション</option><option>ほぼ新品</option><option>良い</option></select></div>
+<div class="fg">
+<label class="lbl" for="k-s">在庫状態</label>
+<sc-if value="{{selAll}}" hint-placeholder-val="{{ true }}"><select class="select" id="k-s"><option>すべての在庫状態</option><option>在庫あり</option><option>在庫僅少（5 冊以下）</option><option>在庫切れ</option></select></sc-if>
+<sc-if value="{{selLow}}" hint-placeholder-val="{{ false }}"><select class="select" id="k-s"><option>在庫僅少（5 冊以下）</option><option>すべての在庫状態</option><option>在庫あり</option><option>在庫切れ</option></select></sc-if>
+<sc-if value="{{selOut}}" hint-placeholder-val="{{ false }}"><select class="select" id="k-s"><option>在庫切れ</option><option>すべての在庫状態</option><option>在庫あり</option><option>在庫僅少（5 冊以下）</option></select></sc-if>
+</div>
+<div class="acts"><button class="btn btn-primary" type="button">絞り込む</button><button class="btn" type="button">解除</button></div>
+</form>
+
+<div class="toolbar">
+<p class="small muted">{{summary}}</p>
+<nav class="pager" aria-label="ページ（上）"><span class="off">前へ</span><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">次へ</a></nav>
+</div>
+
+<div class="tbox">
+<table class="tbl tbl-dense tbl-media">
+<thead>
+<tr><th scope="col"><span class="vh">表紙</span></th><th scope="col">書名</th><th scope="col">著者</th><th scope="col">出版社</th><th scope="col">ジャンル</th><th scope="col">書籍種別</th><th scope="col">コンディション</th><th scope="col" class="num">売価（税抜）</th><th scope="col" class="num">在庫数</th><th scope="col"><span class="vh">操作</span></th></tr>
+</thead>
+<tbody>
+<tr class="{{v.b1}}"><td><span class="thumb c-plum" aria-hidden="true"></span></td><td><span class="t">細雪</span></td><td>谷崎潤一郎</td><td>中央公論社</td><td>日本文学</td><td>単行本</td><td class="cond">良い</td><td class="num">1,500円</td><td class="num">2<span class="badge badge-mute">僅少</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b2}}"><td><span class="thumb c-teal" aria-hidden="true"></span></td><td><span class="t">日の名残り</span></td><td>カズオ・イシグロ</td><td>早川書房</td><td>海外文学</td><td>文庫</td><td class="cond">非常に良い</td><td class="num">600円</td><td class="num">2<span class="badge badge-mute">僅少</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b3}}"><td><span class="thumb c-ochre" aria-hidden="true"></span></td><td><span class="t">砂の女</span></td><td>安部公房</td><td>新潮社</td><td>日本文学</td><td>単行本</td><td class="cond">ほぼ新品</td><td class="num">1,800円</td><td class="num">1<span class="badge badge-mute">僅少</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b4}}"><td><span class="thumb c-blue" aria-hidden="true"></span></td><td><span class="t">銀河鉄道の夜</span></td><td>宮沢賢治</td><td>角川書店</td><td>日本文学</td><td>文庫</td><td class="cond">非常に良い</td><td class="num">400円</td><td class="num">6</td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b5}}"><td><span class="thumb c-green" aria-hidden="true"></span></td><td><span class="t">ゲド戦記 影との戦い</span></td><td>ル＝グウィン</td><td>岩波書店</td><td>SF・ファンタジー</td><td>単行本</td><td class="cond">良い</td><td class="num">800円</td><td class="num">3<span class="badge badge-mute">僅少</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b6}}"><td><span class="thumb c-ox" aria-hidden="true"></span></td><td><span class="t">こころ</span></td><td>夏目漱石</td><td>新潮社</td><td>日本文学</td><td>文庫</td><td class="cond">良い</td><td class="num">300円</td><td class="num">8</td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b7}}"><td><span class="thumb c-slate" aria-hidden="true"></span></td><td><span class="t">雪国</span></td><td>川端康成</td><td>新潮社</td><td>日本文学</td><td>文庫</td><td class="cond">良い</td><td class="num">2,000円</td><td class="num">0<span class="badge">在庫切れ</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b8}}"><td><span class="thumb cover-none" aria-hidden="true"></span></td><td><span class="t">檸檬</span></td><td>梶井基次郎</td><td>新潮社</td><td>日本文学</td><td>文庫</td><td class="cond">可</td><td class="num">200円</td><td class="num">4<span class="badge badge-mute">僅少</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b9}}"><td><span class="thumb c-olive" aria-hidden="true"></span></td><td><span class="t">春琴抄</span><span class="badge badge-mute">非公開</span></td><td>谷崎潤一郎</td><td>新潮社</td><td>日本文学</td><td>文庫</td><td class="cond">非常に良い</td><td class="num">700円</td><td class="num">0<span class="badge">在庫切れ</span></td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+<tr class="{{v.b10}}"><td><span class="thumb c-slate" aria-hidden="true"></span></td><td><span class="t">見えない都市</span></td><td>イタロ・カルヴィーノ</td><td>河出書房新社</td><td>海外文学</td><td>文庫</td><td class="cond">可</td><td class="num">600円</td><td class="num">7</td><td><div class="acts"><a class="linkbtn" href="AdminBook.dc.html">詳細</a><span class="sep" aria-hidden="true">|</span><a class="linkbtn" href="AdminBookEdit.dc.html">更新</a></div></td></tr>
+</tbody>
+</table>
+</div>
+<nav class="pager" aria-label="ページ（下）"><span class="off">前へ</span><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">次へ</a></nav>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"filter":{"editor":"enum","options":["all","low","out"],"default":"all","section":"State"},"$preview":{"width":1440,"height":1430}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const f = this.props.filter ?? 'all';
+    const stock = { b1: 2, b2: 2, b3: 1, b4: 6, b5: 3, b6: 8, b7: 0, b8: 4, b9: 0, b10: 7 };
+    const v = {};
+    Object.keys(stock).forEach((k) => {
+      const n = stock[k];
+      const show = f === 'all' || (f === 'low' && n <= 5) || (f === 'out' && n === 0);
+      v[k] = show ? '' : 'is-hidden';
+    });
+    const summary = {
+      all: 'すべての書籍　新しい順。非公開の書籍も表示します',
+      low: '在庫僅少 41 件　在庫 5 冊以下。在庫切れを含みます',
+      out: '在庫切れ 12 件　在庫数が 0 の書籍'
+    };
+    return {
+      v,
+      summary: summary[f] || summary.all,
+      selAll: f === 'all',
+      selLow: f === 'low',
+      selOut: f === 'out'
+    };
+  }
+}
+</script>
+</body>
+</html>

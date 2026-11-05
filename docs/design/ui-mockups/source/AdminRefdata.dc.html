@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>参照データ一覧</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="AdminDash.dc.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="AdminDash.dc.html">ダッシュボード</a>
+<a href="AdminOrders.dc.html">注文</a>
+<a href="AdminOffers.dc.html">買取</a>
+<a href="AdminBooks.dc.html">在庫</a>
+<a href="AdminRefdata.dc.html" aria-current="page">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="Main.dc.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<div class="headrow">
+<h1 class="pt">参照データ</h1>
+<a class="btn btn-primary" href="AdminRefdataEdit.dc.html">{{newLabel}}</a>
+</div>
+
+<div class="tabs" role="group" aria-label="種別">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}">{{t.label}}</button>
+</sc-for>
+</div>
+<p class="hint" style="margin-bottom: 20px">書籍と買取申込の分類に使う選択肢です。同じ名称は登録できません。削除はできないため、表記を直すときは改名してください。</p>
+
+<div style="max-width: 760px">
+<p class="small muted" style="margin-bottom: 8px">{{summary}}</p>
+<ul class="reflist" aria-label="{{listLabel}}">
+<sc-for list="{{names}}" as="n" hint-placeholder-count="8">
+<li><span>{{n}}</span><a class="linkbtn" href="AdminRefdataEdit.dc.html">改名</a></li>
+</sc-for>
+</ul>
+<nav class="pager" aria-label="ページ"><span class="off">前へ</span><a href="#" aria-current="page">1</a><span class="off">次へ</span></nav>
+</div>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"kind":{"editor":"enum","options":["publisher","type","genre","condition"],"default":"publisher","section":"State"},"$preview":{"width":1440,"height":1050}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const k = s.kind || this.props.kind || 'publisher';
+    const kinds = [
+      { id: 'publisher', label: '出版社', names: ['早川書房', '日本野鳥の会', '河出書房新社', '角川書店', '中央公論社', '新潮社', '岩波書店', '筑摩書房', '講談社', '文藝春秋'] },
+      { id: 'type', label: '書籍種別', names: ['ムック', '大型本', '全集・叢書', '新書', '文庫', '単行本'] },
+      { id: 'genre', label: 'ジャンル', names: ['料理', '辞典・事典', '自然・科学', 'SF・ファンタジー', '海外文学', '日本文学', '歴史', '芸術・写真'] },
+      { id: 'condition', label: 'コンディション', names: ['可', '良い', '非常に良い', 'ほぼ新品'] }
+    ];
+    const cur = kinds.find((x) => x.id === k) || kinds[0];
+    return {
+      tabs: kinds.map((x) => ({ label: x.label, pressed: x.id === cur.id ? 'true' : 'false', pick: () => this.setState({ kind: x.id }) })),
+      names: cur.names,
+      newLabel: cur.label + 'を登録',
+      listLabel: cur.label + 'の一覧',
+      summary: cur.label + ' ' + cur.names.length + ' 件　新しい順'
+    };
+  }
+}
+</script>
+</body>
+</html>

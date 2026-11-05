@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>欲しい物リスト</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="Main.dc.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="Orders.dc.html">注文</a>
+<a href="Search.dc.html">探す</a>
+<a href="Resale.dc.html">本を売る</a>
+<a href="Wish.dc.html" aria-current="page">欲しい物</a>
+<a href="Cart.dc.html">かご <span class="count">{{count}}<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="Addresses.dc.html">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+<sc-if value="{{hasNotice}}" hint-placeholder-val="{{ false }}">
+<div class="banner" role="status"><div class="wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{notice}}</div></div>
+</sc-if>
+
+<main class="wrap">
+<h1 class="pt">欲しい物リスト</h1>
+
+<sc-if value="{{hasItems}}" hint-placeholder-val="{{ true }}">
+<div class="toolbar" style="margin: 0 0 16px">
+<p class="muted">気になる本を控えておく場所です。かごとは違い、本を取り置きません。</p>
+<button class="btn" type="button" onClick="{{moveAll}}">在庫のある本をすべてかごへ移す</button>
+</div>
+<ul class="lines" aria-label="欲しい物リストの本">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="4">
+<li class="{{it.lineCls}}">
+<span class="{{it.thumbCls}}" aria-hidden="true"></span>
+<div class="meta">
+<a class="t" href="Book.dc.html">{{it.title}}</a>
+<span>{{it.author}}</span>
+<span class="cond">コンディション：{{it.cond}}</span>
+<span>{{it.stock}}</span>
+<sc-if value="{{it.out}}" hint-placeholder-val="{{ false }}"><p class="note-warn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg><span>在庫切れのため、かごへは移せません。</span></p></sc-if>
+</div>
+<div class="line-ctl">
+<span class="each num">{{it.price}}</span>
+<button class="btn" type="button" disabled="{{it.out}}" onClick="{{it.move}}">かごへ移す</button>
+<button class="linkbtn" type="button" onClick="{{it.drop}}">取り除く</button>
+</div>
+</li>
+</sc-for>
+</ul>
+<p class="hint" style="margin-top: 16px">価格はすべて税込です。かごへ移した本は、欲しい物リストから消えます。</p>
+</sc-if>
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+<div class="empty">
+<h2 class="h2">欲しい物リストは空です</h2>
+<p class="muted">本のページで「欲しい物リストに入れる」を押すと、ここに並びます。</p>
+<div class="row" style="margin-top: 20px"><a class="btn btn-primary" href="Search.dc.html">本を探す</a></div>
+</div>
+</sc-if>
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="Main.dc.html">トップ</a></li><li><a href="Search.dc.html">探す</a></li><li><a href="Cart.dc.html">かご</a></li><li><a href="Orders.dc.html">注文</a></li><li><a href="Privacy.dc.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"empty":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1280,"height":1380}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const empty = this.props.empty ?? false;
+    const gone = s.gone || {};
+    const added = s.added || 0;
+    const all = [
+      { id: 'w1', title: '夜間飛行', author: 'サン＝テグジュペリ', cond: '良い', price: '440円', stock: '在庫あり', color: 'c-blue', out: false },
+      { id: 'w2', title: '博士の愛した数式', author: '小川洋子', cond: '非常に良い', price: '550円', stock: '残り 1 冊', color: 'c-green', out: false },
+      { id: 'w3', title: '春琴抄', author: '谷崎潤一郎', cond: '非常に良い', price: '770円', stock: '在庫切れ', color: 'c-olive', out: true },
+      { id: 'w4', title: 'モモ', author: 'ミヒャエル・エンデ', cond: 'ほぼ新品', price: '990円', stock: '在庫あり', color: 'c-ox', out: false }
+    ];
+    const left = empty ? [] : all.filter((i) => !gone[i.id]);
+    const items = left.map((i) => Object.assign({}, i, {
+      lineCls: i.out ? 'line is-out' : 'line',
+      thumbCls: 'thumb ' + i.color,
+      move: () => this.setState({ gone: Object.assign({}, gone, { [i.id]: true }), added: added + 1, notice: '『' + i.title + '』をかごへ移しました。' }),
+      drop: () => this.setState({ gone: Object.assign({}, gone, { [i.id]: true }), notice: '『' + i.title + '』を欲しい物リストから取り除きました。' })
+    }));
+    const movable = items.filter((i) => !i.out);
+    const kept = items.filter((i) => i.out).map((i) => '『' + i.title + '』').join('');
+    return {
+      items,
+      hasItems: items.length > 0,
+      isEmpty: items.length === 0,
+      count: 3 + added,
+      hasNotice: !!s.notice,
+      notice: s.notice || '',
+      moveAll: () => {
+        if (!movable.length) return;
+        const g = Object.assign({}, gone);
+        movable.forEach((i) => { g[i.id] = true; });
+        this.setState({ gone: g, added: added + movable.length, notice: movable.length + ' 冊をかごへ移しました。' + (kept ? '在庫切れの' + kept + 'は残っています。' : '') });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

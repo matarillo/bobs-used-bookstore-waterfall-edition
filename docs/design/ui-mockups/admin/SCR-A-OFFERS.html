@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>買取オファー一覧</title>
+<link rel="stylesheet" href="../bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="SCR-A-DASH.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="SCR-A-DASH.html">ダッシュボード</a>
+<a href="SCR-A-ORDERS.html">注文</a>
+<a href="SCR-A-OFFERS.html" aria-current="page">買取</a>
+<a href="SCR-A-BOOKS.html">在庫</a>
+<a href="SCR-A-REFDATA.html">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="../customer/SCR-HOME.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+
+<main class="wrap">
+<h1 class="pt">買取</h1>
+
+<form class="filters" aria-label="申込の絞り込み">
+<div class="fg"><label class="lbl" for="f-t">書名</label><input class="input" id="f-t" type="text"></div>
+<div class="fg"><label class="lbl" for="f-a">著者</label><input class="input" id="f-a" type="text"></div>
+<div class="fg"><label class="lbl" for="f-g">ジャンル</label><select class="select" id="f-g"><option>すべてのジャンル</option><option>日本文学</option><option>海外文学</option></select></div>
+<div class="fg"><label class="lbl" for="f-c">コンディション</label><select class="select" id="f-c"><option>すべてのコンディション</option><option>ほぼ新品</option><option>良い</option></select></div>
+<div class="fg"><label class="lbl" for="f-s">申込の状態</label><select class="select" id="f-s"><option>すべての状態</option><option>承認待ち</option><option>承認済（発送待ち）</option><option>受領済</option><option>支払完了</option><option>却下</option><option>取下げ</option></select></div>
+<div class="fg"><label class="lbl" for="f-from">申込日（この日から）</label><input class="input" id="f-from" type="date"></div>
+<div class="fg"><label class="lbl" for="f-to">申込日（この日まで）</label><input class="input" id="f-to" type="date"></div>
+<div class="acts"><button class="btn btn-primary" type="button">絞り込む</button><button class="btn" type="button">解除</button></div>
+</form>
+
+<div class="toolbar">
+<p class="small muted">新しい順</p>
+<nav class="pager" aria-label="ページ（上）"><span class="off">前へ</span><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">次へ</a></nav>
+</div>
+
+<div class="tbox">
+<table class="tbl tbl-dense">
+<thead>
+<tr><th scope="col">顧客名</th><th scope="col">書名</th><th scope="col">著者</th><th scope="col">ジャンル</th><th scope="col">コンディション</th><th scope="col" class="num">買取価格</th><th scope="col">申込日</th><th scope="col">申込の状態</th><th scope="col"><span class="vh">操作</span></th></tr>
+</thead>
+<tbody>
+<tr>
+<td>森川 葵</td><td class="t">日の名残り</td><td>カズオ・イシグロ</td><td>海外文学</td><td class="cond">良い</td><td class="num">600円</td><td>2026/11/04</td>
+<td><span class="st">承認待ち</span></td>
+<td><div class="acts"><button class="linkbtn" type="button">承認</button><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button">却下</button></div></td>
+</tr>
+<tr>
+<td>岡田 拓海</td><td class="t">フィールドガイド 日本の野鳥</td><td>高野伸二</td><td>自然・科学</td><td class="cond">可</td><td class="num">450円</td><td>2026/11/03</td>
+<td><span class="st st-go">承認済（発送待ち）</span></td>
+<td><div class="acts"><button class="linkbtn" type="button">受領を記録</button></div></td>
+</tr>
+<tr>
+<td>石井 玲奈</td><td class="t">檀流クッキング</td><td>檀一雄</td><td>料理</td><td class="cond">非常に良い</td><td class="num">800円</td><td>2026/10/29</td>
+<td><span class="st st-go">受領済</span></td>
+<td><div class="acts"><button class="linkbtn" type="button">支払を記録</button><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button">却下</button></div></td>
+</tr>
+<tr>
+<td>中村 颯</td><td class="t">砂の女</td><td>安部公房</td><td>日本文学</td><td class="cond">良い</td><td class="num">500円</td><td>2026/10/21</td>
+<td><span class="st st-done">支払完了</span></td>
+<td><div class="acts"><a class="btn" href="SCR-A-BOOK-EDIT-shelving.html">在庫に追加</a></div></td>
+</tr>
+<tr>
+<td>小林 杏</td><td class="t">細雪</td><td>谷崎潤一郎</td><td>日本文学</td><td class="cond">ほぼ新品</td><td class="num">700円</td><td>2026/10/15</td>
+<td><span class="st st-done">支払完了</span></td>
+<td><span class="small muted">棚入れ済</span></td>
+</tr>
+<tr>
+<td>高橋 蓮</td><td class="t">広辞苑 第七版</td><td>新村出 編</td><td>辞典・事典</td><td class="cond">可</td><td class="num">3,000円</td><td>2026/10/12</td>
+<td><span class="st st-stop">却下</span><span class="reason">本文に水濡れによる波打ちがあり、販売できる状態ではありません。</span></td>
+<td></td>
+</tr>
+<tr>
+<td>田中 類</td><td class="t">ノルウェイの森</td><td>村上春樹</td><td>日本文学</td><td class="cond">良い</td><td class="num">550円</td><td>2026/10/10</td>
+<td><span class="st st-stop">取下げ</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<nav class="pager" aria-label="ページ（下）"><span class="off">前へ</span><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">次へ</a></nav>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="../customer/SCR-PRIVACY.html">プライバシー</a></div></footer>
+
+
+</div>
+</body></html>

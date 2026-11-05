@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>自分の住所</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="Main.dc.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="Orders.dc.html">注文</a>
+<a href="Search.dc.html">探す</a>
+<a href="Resale.dc.html">本を売る</a>
+<a href="Wish.dc.html">欲しい物</a>
+<a href="Cart.dc.html">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="Addresses.dc.html" aria-current="page">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+<sc-if value="{{hasNotice}}" hint-placeholder-val="{{ false }}">
+<div class="banner" role="status"><div class="wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{notice}}</div></div>
+</sc-if>
+
+<main class="wrap">
+<div class="headrow">
+<h1 class="pt">自分の住所</h1>
+<a class="btn btn-primary" href="AddressEdit.dc.html">住所を追加</a>
+</div>
+
+<sc-if value="{{hasItems}}" hint-placeholder-val="{{ true }}">
+<p class="muted" style="margin-bottom: 20px">注文の確定で選ぶお届け先です。宛名は、ログインに使っているお名前（森川 葵）になります。</p>
+<ul class="addrs" aria-label="登録した住所">
+<sc-for list="{{items}}" as="a" hint-placeholder-count="3">
+<li>
+<p>〒{{a.zip}}<br />{{a.city}}<br />{{a.line1}}<sc-if value="{{a.hasLine2}}" hint-placeholder-val="{{ true }}"><br />{{a.line2}}</sc-if><br />日本</p>
+<div class="acts"><a class="linkbtn" href="AddressEdit.dc.html">編集</a><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button" onClick="{{a.ask}}">削除</button></div>
+</li>
+</sc-for>
+</ul>
+<nav class="pager" aria-label="ページ"><span class="off">前へ</span><a href="#" aria-current="page">1</a><span class="off">次へ</span></nav>
+</sc-if>
+
+<sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+<div class="empty" style="padding-top: 16px">
+<h2 class="h2">住所はまだ登録されていません</h2>
+<p class="muted">注文するには、お届け先の住所が要ります。住所を追加すると、注文の確定で選べるようになります。</p>
+<div class="row" style="margin-top: 20px"><a class="btn btn-primary" href="AddressEdit.dc.html">住所を追加</a></div>
+</div>
+</sc-if>
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="Main.dc.html">トップ</a></li><li><a href="Search.dc.html">探す</a></li><li><a href="Cart.dc.html">かご</a></li><li><a href="Orders.dc.html">注文</a></li><li><a href="Privacy.dc.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></p>
+</div>
+</footer>
+
+<sc-if value="{{asking}}" hint-placeholder-val="{{ false }}">
+<div class="scrim">
+<section class="dialog" aria-labelledby="dlg-t">
+<h2 class="h2" id="dlg-t">この住所を削除しますか？</h2>
+<p>〒{{target.zip}} {{target.city}}{{target.line1}} を、お届け先の選択肢から外します。この住所を使った過去の注文のお届け先は、そのまま残ります。</p>
+<div class="d-acts">
+<button class="btn" type="button" onClick="{{close}}">削除しない</button>
+<button class="btn btn-danger btn-primary" type="button" onClick="{{confirm}}">削除する</button>
+</div>
+</section>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"empty":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1280,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const empty = this.props.empty ?? false;
+    const gone = s.gone || {};
+    const all = [
+      { id: 'a1', zip: '180-0004', city: '東京都武蔵野市', line1: '吉祥寺本町2-14-7', line2: 'メゾン吉祥寺 302' },
+      { id: 'a2', zip: '150-0001', city: '東京都渋谷区', line1: '神宮前5-8-2', line2: '青葉ビル 4F 森川デザイン事務所' },
+      { id: 'a3', zip: '390-0874', city: '長野県松本市', line1: '大手4-7-12', line2: '' }
+    ];
+    const items = empty ? [] : all.filter((a) => !gone[a.id]).map((a) => Object.assign({}, a, {
+      hasLine2: !!a.line2,
+      ask: () => this.setState({ target: a.id })
+    }));
+    const t = all.find((a) => a.id === s.target) || { zip: '', city: '', line1: '' };
+    return {
+      items,
+      hasItems: items.length > 0,
+      isEmpty: items.length === 0,
+      hasNotice: !!s.notice,
+      notice: s.notice || '',
+      asking: !!s.target,
+      target: t,
+      close: () => this.setState({ target: null }),
+      confirm: () => this.setState({ target: null, gone: Object.assign({}, gone, { [s.target]: true }), notice: '住所を削除しました。' })
+    };
+  }
+}
+</script>
+</body>
+</html>

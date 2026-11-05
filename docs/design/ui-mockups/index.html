@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bob's Used Books — UI Mockups &amp; Style Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="bob.css">
+</head>
+<body>
+<div class="bob" style="padding-bottom: 80px">
+<main class="wrap">
+<h1 class="pt">Bob's Used Books — UI Mockups &amp; Style Guide</h1>
+<p class="lede" style="max-width: none">全 26 版面の UI モックアップ。色・書体・部品は<a href="style-guide.html">スタイルガイド</a>に定める。<br>状態の名前を開くと、その状態の画面が出る。</p>
+<h2 class="h2" style="margin: 48px 0 12px">店頭（顧客向け）</h2>
+<div class="tbox"><table class="tbl tbl-dense"><thead><tr><th scope="col">画面</th><th scope="col">名称</th><th scope="col">状態</th></tr></thead><tbody>
+<tr><td class="id">SCR-HOME</td><td class="t">トップ</td><td><a href="customer/SCR-HOME.html">既定</a></td></tr>
+<tr><td class="id">SCR-SEARCH</td><td class="t">書籍を探す</td><td><a href="customer/SCR-SEARCH.html">検索結果あり</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-SEARCH--no-results.html">検索結果なし</a></td></tr>
+<tr><td class="id">SCR-BOOK</td><td class="t">書籍の詳細</td><td><a href="customer/SCR-BOOK.html">残り 2 冊</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-BOOK--in-stock.html">在庫あり</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-BOOK--out-of-stock.html">在庫切れ</a></td></tr>
+<tr><td class="id">SCR-CART</td><td class="t">買い物かご</td><td><a href="customer/SCR-CART.html">ログイン済・在庫切れの明細あり</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CART--signed-out.html">未ログイン</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CART--empty.html">空</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CART--remove-dialog.html">取り除く確認</a></td></tr>
+<tr><td class="id">SCR-WISH</td><td class="t">欲しい物リスト</td><td><a href="customer/SCR-WISH.html">在庫切れの本を含む</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-WISH--moved.html">かごへ移したあと</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-WISH--empty.html">空</a></td></tr>
+<tr><td class="id">SCR-CHECKOUT</td><td class="t">配送先の選択と注文確定</td><td><a href="customer/SCR-CHECKOUT.html">住所 2 件・在庫切れの明細あり</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CHECKOUT--no-address.html">住所なし</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CHECKOUT--failed.html">注文できなかった</a></td></tr>
+<tr><td class="id">SCR-CHECKOUT-DONE</td><td class="t">注文完了</td><td><a href="customer/SCR-CHECKOUT-DONE.html">在庫切れの本を除いて注文</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-CHECKOUT-DONE--no-exclusion.html">除いた本なし</a></td></tr>
+<tr><td class="id">SCR-ADDRESSES</td><td class="t">自分の住所</td><td><a href="customer/SCR-ADDRESSES.html">住所 3 件</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ADDRESSES--empty.html">空</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ADDRESSES--delete-dialog.html">削除の確認</a></td></tr>
+<tr><td class="id">SCR-ADDRESS-EDIT</td><td class="t">住所の登録／更新</td><td><a href="customer/SCR-ADDRESS-EDIT.html">更新</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ADDRESS-EDIT--new.html">登録</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ADDRESS-EDIT--from-checkout.html">注文の確定から登録</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ADDRESS-EDIT--errors.html">入力の不備</a></td></tr>
+<tr><td class="id">SCR-ORDERS</td><td class="t">自分の注文</td><td><a href="customer/SCR-ORDERS.html">全状態の注文</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDERS--empty.html">空</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDERS--cancel-dialog.html">取消の確認</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDERS--cancelled.html">取り消したあと</a></td></tr>
+<tr><td class="id">SCR-ORDER</td><td class="t">注文の詳細</td><td><a href="customer/SCR-ORDER.html">受付済</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDER--pending.html">受付待ち</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDER--shipped.html">出荷済</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDER--delivered.html">配達済</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDER--cancelled.html">取消済</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-ORDER--cancel-dialog.html">取消の確認</a></td></tr>
+<tr><td class="id">SCR-RESALE</td><td class="t">自分の買取申込</td><td><a href="customer/SCR-RESALE.html">全状態の申込</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-RESALE--empty.html">空</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-RESALE--withdraw-dialog.html">取下げの確認</a></td></tr>
+<tr><td class="id">SCR-RESALE-NEW</td><td class="t">買取を申し込む</td><td><a href="customer/SCR-RESALE-NEW.html">入力済</a><span class="sep" aria-hidden="true">　|　</span><a href="customer/SCR-RESALE-NEW--errors.html">入力の不備</a></td></tr>
+<tr><td class="id">SCR-PRIVACY</td><td class="t">プライバシー</td><td><a href="customer/SCR-PRIVACY.html">既定</a></td></tr>
+<tr><td class="id">SCR-ERROR</td><td class="t">エラー</td><td><a href="customer/SCR-ERROR.html">既定</a></td></tr>
+</tbody></table></div>
+<h2 class="h2" style="margin: 48px 0 12px">管理（スタッフ向け）</h2>
+<div class="tbox"><table class="tbl tbl-dense"><thead><tr><th scope="col">画面</th><th scope="col">名称</th><th scope="col">状態</th></tr></thead><tbody>
+<tr><td class="id">SCR-A-DASH</td><td class="t">ダッシュボード</td><td><a href="admin/SCR-A-DASH.html">既定</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-DASH--stats-failed.html">売上を取得できなかった</a></td></tr>
+<tr><td class="id">SCR-A-ORDERS</td><td class="t">注文一覧</td><td><a href="admin/SCR-A-ORDERS.html">絞り込みなし</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDERS--pending.html">受付待ちで絞り込み</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDERS--past-due.html">納期超過で絞り込み</a></td></tr>
+<tr><td class="id">SCR-A-ORDER</td><td class="t">注文の詳細</td><td><a href="admin/SCR-A-ORDER.html">受付済・納期超過</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--pending.html">受付待ち</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--shipped.html">出荷済</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--delivered.html">配達済</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--cancelled.html">取消済</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--conflict.html">ほかのスタッフが先に処理</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-ORDER--shipped-done.html">出荷したあと</a></td></tr>
+<tr><td class="id">SCR-A-OFFERS</td><td class="t">買取オファー一覧</td><td><a href="admin/SCR-A-OFFERS.html">全状態の申込</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-OFFERS--approved.html">承認したあと</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-OFFERS--reject-dialog.html">却下の確認</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-OFFERS--reject-reason-missing.html">却下の理由が未入力</a></td></tr>
+<tr><td class="id">SCR-A-BOOKS</td><td class="t">在庫一覧</td><td><a href="admin/SCR-A-BOOKS.html">絞り込みなし</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOKS--low-stock.html">在庫僅少で絞り込み</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOKS--out-of-stock.html">在庫切れで絞り込み</a></td></tr>
+<tr><td class="id">SCR-A-BOOK</td><td class="t">書籍の詳細</td><td><a href="admin/SCR-A-BOOK.html">公開中</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOK--hidden.html">非公開</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOK--no-cover.html">表紙画像なし</a></td></tr>
+<tr><td class="id">SCR-A-BOOK-EDIT</td><td class="t">書籍の登録／更新</td><td><a href="admin/SCR-A-BOOK-EDIT.html">更新</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOK-EDIT--new.html">登録</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOK-EDIT--image-rejected.html">表紙画像が不適正</a></td></tr>
+<tr><td class="id">SCR-A-BOOK-EDIT（版面 2）</td><td class="t">棚入れ</td><td><a href="admin/SCR-A-BOOK-EDIT-shelving.html">入力済</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-BOOK-EDIT-shelving--price-missing.html">売価が未入力</a></td></tr>
+<tr><td class="id">SCR-A-REFDATA</td><td class="t">参照データ一覧</td><td><a href="admin/SCR-A-REFDATA.html">出版社</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-REFDATA--type.html">書籍種別</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-REFDATA--genre.html">ジャンル</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-REFDATA--condition.html">コンディション</a></td></tr>
+<tr><td class="id">SCR-A-REFDATA-EDIT</td><td class="t">参照データの登録／改名</td><td><a href="admin/SCR-A-REFDATA-EDIT.html">改名</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-REFDATA-EDIT--new.html">登録</a><span class="sep" aria-hidden="true">　|　</span><a href="admin/SCR-A-REFDATA-EDIT--duplicate.html">名称の重複</a></td></tr>
+<tr><td class="id">SCR-A-ERROR</td><td class="t">エラー（管理）</td><td><a href="admin/SCR-A-ERROR.html">既定</a></td></tr>
+</tbody></table></div>
+</main>
+</div>
+</body>
+</html>

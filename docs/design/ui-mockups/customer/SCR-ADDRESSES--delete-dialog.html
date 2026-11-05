@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自分の住所</title>
+<link rel="stylesheet" href="../bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="SCR-HOME.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="SCR-ORDERS.html">注文</a>
+<a href="SCR-SEARCH.html">探す</a>
+<a href="SCR-RESALE.html">本を売る</a>
+<a href="SCR-WISH.html">欲しい物</a>
+<a href="SCR-CART.html">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="SCR-ADDRESSES.html" aria-current="page">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+
+<main class="wrap">
+<div class="headrow">
+<h1 class="pt">自分の住所</h1>
+<a class="btn btn-primary" href="SCR-ADDRESS-EDIT.html">住所を追加</a>
+</div>
+
+
+<p class="muted" style="margin-bottom: 20px">注文の確定で選ぶお届け先です。宛名は、ログインに使っているお名前（森川 葵）になります。</p>
+<ul class="addrs" aria-label="登録した住所">
+
+<li>
+<p>〒180-0004<br>東京都武蔵野市<br>吉祥寺本町2-14-7<br>メゾン吉祥寺 302<br>日本</p>
+<div class="acts"><a class="linkbtn" href="SCR-ADDRESS-EDIT.html">編集</a><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button">削除</button></div>
+</li>
+
+<li>
+<p>〒150-0001<br>東京都渋谷区<br>神宮前5-8-2<br>青葉ビル 4F 森川デザイン事務所<br>日本</p>
+<div class="acts"><a class="linkbtn" href="SCR-ADDRESS-EDIT.html">編集</a><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button">削除</button></div>
+</li>
+
+<li>
+<p>〒390-0874<br>長野県松本市<br>大手4-7-12<br>日本</p>
+<div class="acts"><a class="linkbtn" href="SCR-ADDRESS-EDIT.html">編集</a><span class="sep" aria-hidden="true">|</span><button class="linkbtn" type="button">削除</button></div>
+</li>
+
+</ul>
+<nav class="pager" aria-label="ページ"><span class="off">前へ</span><a href="#" aria-current="page">1</a><span class="off">次へ</span></nav>
+
+
+
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="SCR-HOME.html">トップ</a></li><li><a href="SCR-SEARCH.html">探す</a></li><li><a href="SCR-CART.html">かご</a></li><li><a href="SCR-ORDERS.html">注文</a></li><li><a href="SCR-PRIVACY.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="SCR-PRIVACY.html">プライバシー</a></p>
+</div>
+</footer>
+
+
+<div class="scrim">
+<section class="dialog" aria-labelledby="dlg-t">
+<h2 class="h2" id="dlg-t">この住所を削除しますか？</h2>
+<p>〒390-0874 長野県松本市大手4-7-12 を、お届け先の選択肢から外します。この住所を使った過去の注文のお届け先は、そのまま残ります。</p>
+<div class="d-acts">
+<button class="btn" type="button">削除しない</button>
+<button class="btn btn-danger btn-primary" type="button">削除する</button>
+</div>
+</section>
+</div>
+
+</div>
+</body></html>

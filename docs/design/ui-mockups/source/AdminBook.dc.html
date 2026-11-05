@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>書籍の詳細（管理）</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./bob.css" />
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" />
+<style>body{margin:0}</style>
+</helmet>
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="AdminDash.dc.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="AdminDash.dc.html">ダッシュボード</a>
+<a href="AdminOrders.dc.html">注文</a>
+<a href="AdminOffers.dc.html">買取</a>
+<a href="AdminBooks.dc.html" aria-current="page">在庫</a>
+<a href="AdminRefdata.dc.html">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="Main.dc.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<a class="back" href="AdminBooks.dc.html">在庫一覧に戻る</a>
+<div class="headrow" style="margin-top: 12px">
+<h1 class="pt">細雪<sc-if value="{{hidden}}" hint-placeholder-val="{{ false }}"> <span class="badge badge-mute" style="vertical-align: middle">非公開</span></sc-if></h1>
+<a class="btn btn-primary" href="AdminBookEdit.dc.html">更新</a>
+</div>
+
+<div class="adm-book">
+<div class="bk">
+<sc-if value="{{hasCover}}" hint-placeholder-val="{{ true }}"><div class="cover c-plum"><span class="ct">細雪</span><span class="ca">谷崎潤一郎</span></div></sc-if>
+<sc-if value="{{noCover}}" hint-placeholder-val="{{ false }}"><div class="cover cover-none"><span class="ct">Bob's Used Books</span></div><p class="hint" style="margin-top: 10px">表紙画像は登録されていません。店頭には店の既定の表紙を出しています。</p></sc-if>
+</div>
+
+<div>
+<div class="ledgerline">
+<span>売価 <b>1,500円</b> <span class="small muted">税抜。店頭では 1,650円（税込）</span></span>
+<span>仕入原価 <b>400円</b></span>
+<span>在庫数 <b>2 冊</b> <span class="badge badge-mute">在庫僅少</span></span>
+</div>
+
+<section class="details" aria-labelledby="b-info">
+<h2 class="h3" id="b-info">書誌と分類</h2>
+<dl class="kv">
+<dt>書名</dt><dd>細雪</dd>
+<dt>著者</dt><dd>谷崎潤一郎</dd>
+<dt>ISBN</dt><dd class="num">9784120000158</dd>
+<dt>出版社</dt><dd>中央公論社</dd>
+<dt>ジャンル</dt><dd>日本文学</dd>
+<dt>書籍種別</dt><dd>単行本</dd>
+<dt>コンディション</dt><dd class="cond" style="font-size: 15px">良い</dd>
+<dt>店頭での表示</dt><dd>{{visibility}}</dd>
+</dl>
+</section>
+
+<section class="details" aria-labelledby="b-sum">
+<h2 class="h3" id="b-sum">概要</h2>
+<p class="prose">大阪・船場の旧家に生まれた四姉妹の日々を、昭和十年代の移ろう季節とともに描く長編。縁談、病、水害と、華やかな暮らしの陰で家が少しずつ傾いていく。</p>
+</section>
+</div>
+</div>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="Privacy.dc.html">プライバシー</a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"hidden":{"editor":"boolean","default":false,"section":"State"},"noCover":{"editor":"boolean","default":false,"section":"State"},"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const hidden = this.props.hidden ?? false;
+    const noCover = this.props.noCover ?? false;
+    return {
+      hidden,
+      hasCover: !noCover,
+      noCover,
+      visibility: hidden ? '非公開（店頭の検索結果とトップに出しません）' : '公開中'
+    };
+  }
+}
+</script>
+</body>
+</html>

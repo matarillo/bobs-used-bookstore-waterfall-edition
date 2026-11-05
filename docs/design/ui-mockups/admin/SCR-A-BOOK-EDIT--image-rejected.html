@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>書籍の登録／更新</title>
+<link rel="stylesheet" href="../bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob admin">
+<header class="ah">
+<div class="wrap">
+<a class="mark" href="SCR-A-DASH.html">Bob's Used Books<span class="tag">スタッフ</span></a>
+<nav class="nav" aria-label="管理">
+<a href="SCR-A-DASH.html">ダッシュボード</a>
+<a href="SCR-A-ORDERS.html">注文</a>
+<a href="SCR-A-OFFERS.html">買取</a>
+<a href="SCR-A-BOOKS.html" aria-current="page">在庫</a>
+<a href="SCR-A-REFDATA.html">参照データ</a>
+</nav>
+<div class="nav nav-end">
+<span>山田 春香</span>
+<a href="../customer/SCR-HOME.html">店頭へ</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<h1 class="pt">書籍の更新：細雪</h1>
+
+
+<div class="msg" style="margin-bottom: 24px">
+<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>
+<div><b>書籍を保存できませんでした。</b><p>表紙画像が適正判定を通りませんでした。別の画像を選んで、もう一度保存してください。ほかの入力内容は残っています。</p></div>
+</div>
+
+
+<form aria-label="書籍">
+<div class="form2">
+<div class="stack">
+<div class="fg"><label class="lbl" for="b-title">書名</label><input class="input" id="b-title" type="text" value="細雪"></div>
+<div class="fg"><label class="lbl" for="b-author">著者</label><input class="input" id="b-author" type="text" value="谷崎潤一郎"></div>
+<div class="fg"><label class="lbl" for="b-isbn">ISBN</label><input class="input" id="b-isbn" type="text" value="9784120000158" style="max-width: 280px"></div>
+<div class="pair">
+<div class="fg">
+<label class="lbl" for="b-price">売価（円）</label>
+<input class="input" id="b-price" type="text" value="1500">
+<p class="hint">税抜で入力します。店頭には税込で表示されます。</p>
+</div>
+<div class="fg">
+
+
+<span class="lbl">仕入原価</span>
+<p class="ro"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>400円</p>
+<p class="hint">登録したときに確定しています。変更できません。</p>
+
+</div>
+</div>
+<div class="fg">
+<label class="lbl" for="b-qty">在庫数</label>
+<div class="row" style="align-items: flex-start">
+<input class="input input-short" id="b-qty" type="text" value="2">
+
+<div class="fg" style="flex: 1; min-width: 240px">
+<label class="vh" for="b-why">棚卸調整の理由</label>
+<input class="input" id="b-why" type="text" value="棚の点検で 1 冊に水濡れを見つけたため">
+<p class="hint">3 冊から 2 冊へ、差分 −1。理由は実施者の名前とともに記録されます。</p>
+</div>
+
+</div>
+</div>
+<div class="fg"><label class="lbl" for="b-sum">概要</label><textarea class="textarea" id="b-sum" value="大阪・船場の旧家に生まれた四姉妹の日々を、昭和十年代の移ろう季節とともに描く長編。縁談、病、水害と、華やかな暮らしの陰で家が少しずつ傾いていく。">大阪・船場の旧家に生まれた四姉妹の日々を、昭和十年代の移ろう季節とともに描く長編。縁談、病、水害と、華やかな暮らしの陰で家が少しずつ傾いていく。</textarea></div>
+<label class="check"><input type="checkbox">非公開にする（店頭の検索結果とトップに出さない）</label>
+</div>
+
+<div class="stack">
+<div class="fg"><label class="lbl" for="b-pub">出版社</label><div class="withbtn"><select class="select" id="b-pub"><option>中央公論社</option><option>新潮社</option><option>岩波書店</option></select><button class="btn" type="button">追加</button></div></div>
+<div class="fg"><label class="lbl" for="b-genre">ジャンル</label><div class="withbtn"><select class="select" id="b-genre"><option>日本文学</option><option>海外文学</option><option>自然・科学</option></select><button class="btn" type="button">追加</button></div></div>
+<div class="fg"><label class="lbl" for="b-type">書籍種別</label><div class="withbtn"><select class="select" id="b-type"><option>単行本</option><option>文庫</option><option>新書</option></select><button class="btn" type="button">追加</button></div></div>
+<div class="fg"><label class="lbl" for="b-cond">コンディション</label><div class="withbtn"><select class="select" id="b-cond"><option>良い</option><option>ほぼ新品</option><option>非常に良い</option><option>可</option></select><button class="btn" type="button">追加</button></div></div>
+</div>
+</div>
+
+<div class="cover-field">
+<span class="thumb c-plum" aria-hidden="true"></span>
+
+<div class="fg">
+<label class="lbl" for="b-img">表紙画像</label>
+<input class="file" id="b-img" type="file">
+
+<p class="ferr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg>この画像は適正判定を通らなかったため、保存していません。</p>
+</div>
+</div>
+
+<div class="form-acts">
+<button class="btn btn-primary" type="button">変更を保存</button>
+<a class="btn" href="SCR-A-BOOKS.html">在庫一覧に戻る</a>
+</div>
+</form>
+</main>
+
+<footer class="af"><div class="wrap"><span>© 2026 Bob's Used Books</span><a href="../customer/SCR-PRIVACY.html">プライバシー</a></div></footer>
+</div>
+</body></html>

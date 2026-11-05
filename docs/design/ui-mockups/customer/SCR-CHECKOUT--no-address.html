@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注文の確定</title>
+<link rel="stylesheet" href="../bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="SCR-HOME.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="SCR-ORDERS.html">注文</a>
+<a href="SCR-SEARCH.html">探す</a>
+<a href="SCR-RESALE.html">本を売る</a>
+<a href="SCR-WISH.html">欲しい物</a>
+<a href="SCR-CART.html" aria-current="page">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="SCR-ADDRESSES.html">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<h1 class="pt">注文の確定</h1>
+<ol class="steps" aria-label="注文までの進み具合">
+<li class="done">かご</li>
+<li aria-current="step">配送先</li>
+<li>完了</li>
+</ol>
+
+
+
+<div class="co">
+<div>
+<section aria-labelledby="ship">
+<h2 class="h2" id="ship" style="margin-bottom: 16px">お届け先</h2>
+
+
+<p class="muted">住所がまだ登録されていません。住所を追加すると、お届け先を選べます。</p>
+
+<a class="btn" href="SCR-ADDRESS-EDIT.html" style="margin-top: 16px">住所を追加</a>
+</section>
+
+<section aria-labelledby="items" style="margin-top: 48px">
+<h2 class="h2" id="items" style="margin-bottom: 16px">注文する本</h2>
+<ul class="lines">
+<li class="line">
+<span class="thumb c-teal" aria-hidden="true"></span>
+<div class="meta"><span class="t">日の名残り</span><span>カズオ・イシグロ</span></div>
+<div class="line-ctl"><span class="each num">660円 × 1</span><span class="sub num">660円</span></div>
+</li>
+<li class="line">
+<span class="thumb c-plum" aria-hidden="true"></span>
+<div class="meta"><span class="t">細雪</span><span>谷崎潤一郎</span></div>
+<div class="line-ctl"><span class="each num">1,650円 × 1</span><span class="sub num">1,650円</span></div>
+</li>
+<li class="line is-out">
+<span class="thumb c-slate" aria-hidden="true"></span>
+<div class="meta">
+<span class="t">雪国</span><span>川端康成</span>
+<p class="note-warn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"></path><path d="M12 10v4.5"></path><path d="M12 17.5v.01"></path></svg><span>在庫切れです。この本は注文に含まれず、かごに残ります。</span></p>
+</div>
+<div class="line-ctl"><span class="each num struck">2,200円 × 1</span><span class="sub num struck">2,200円</span></div>
+</li>
+</ul>
+</section>
+</div>
+
+<aside class="sum" aria-label="合計">
+<div class="sum-total"><span class="k">合計（税込）</span><span class="amt">2,310円</span></div>
+<dl class="breakdown">
+<dt>小計（税抜）</dt><dd>2,100円</dd>
+<dt>消費税（10%）</dt><dd>210円</dd>
+<dt>送料</dt><dd>かかりません</dd>
+</dl>
+
+
+<button class="btn btn-primary btn-wide" type="button" disabled="disabled">注文する</button>
+<p class="hint" style="margin-top: 8px">注文するには住所を追加してください。</p>
+
+<p class="fine">代金のお支払いは、店からのご連絡のうえ承ります。注文の確定は、支払いの完了を意味しません。</p>
+</aside>
+</div>
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="SCR-HOME.html">トップ</a></li><li><a href="SCR-SEARCH.html">探す</a></li><li><a href="SCR-CART.html">かご</a></li><li><a href="SCR-ORDERS.html">注文</a></li><li><a href="SCR-PRIVACY.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="SCR-PRIVACY.html">プライバシー</a></p>
+</div>
+</footer>
+</div>
+</body></html>

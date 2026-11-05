@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>本を探す</title>
+<link rel="stylesheet" href="../bob.css">
+<style>body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&amp;text=0123456789&amp;display=swap"><style>body{margin:0}</style></head>
+<body>
+
+
+
+
+
+<div class="bob">
+<header class="sh">
+<div class="wrap">
+<a class="mark" href="SCR-HOME.html">Bob's Used Books</a>
+<nav class="nav" aria-label="メイン">
+<a href="SCR-ORDERS.html">注文</a>
+<a href="SCR-SEARCH.html" aria-current="page">探す</a>
+<a href="SCR-RESALE.html">本を売る</a>
+<a href="SCR-WISH.html">欲しい物</a>
+<a href="SCR-CART.html">かご <span class="count">3<span class="vh">冊</span></span></a>
+</nav>
+<div class="nav nav-end">
+<a href="SCR-ADDRESSES.html">森川 葵</a>
+<a href="#">ログアウト</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<h1 class="pt">本を探す</h1>
+<form class="searchbar" role="search">
+<label class="vh" for="q">書名・著者・ISBN</label>
+<input class="input" id="q" type="search" value="日本の野鳥 初版" placeholder="書名・著者・ISBN">
+<button class="btn btn-primary" type="button">検索</button>
+</form>
+<div class="filters-row">
+<div class="fg"><label class="lbl" for="genre">ジャンル</label><select class="select" id="genre"><option>すべてのジャンル</option><option>日本文学</option><option>海外文学</option><option>SF・ファンタジー</option><option>自然・科学</option></select></div>
+<div class="fg"><label class="lbl" for="cond">コンディション</label><select class="select" id="cond"><option>すべてのコンディション</option><option>ほぼ新品</option><option>非常に良い</option><option>良い</option><option>可</option></select></div>
+<div class="fg push"><label class="lbl" for="sort">並び順</label><select class="select" id="sort"><option>書名順</option><option>価格の安い順</option><option>価格の高い順</option></select></div>
+</div>
+<p class="hint" style="margin-top: 12px">書名・著者・ISBN の一部で探せます。価格はすべて税込です。</p>
+
+
+
+
+<div class="empty">
+<h2 class="h2">「日本の野鳥 初版」に一致する本はありません</h2>
+<p class="muted">言葉を減らすか、書名や著者の表記を確かめてください。ジャンルとコンディションの絞り込みを外すと、探す範囲が広がります。</p>
+<div class="row" style="margin-top: 20px"><a class="btn" href="SCR-SEARCH.html">検索条件を消す</a></div>
+</div>
+
+</main>
+
+<footer class="sf">
+<div class="wrap">
+<div class="cols">
+<div><h2>店の所在</h2><ul><li>[住所]</li><li>[電話番号]</li><li>[メールアドレス]</li></ul></div>
+<div><h2>営業時間</h2><ul><li>平日 [時間]</li><li>土曜 [時間]</li><li>日曜 [時間]</li></ul></div>
+<div><h2>案内</h2><ul><li><a href="SCR-HOME.html">トップ</a></li><li><a href="SCR-SEARCH.html">探す</a></li><li><a href="SCR-CART.html">かご</a></li><li><a href="SCR-ORDERS.html">注文</a></li><li><a href="SCR-PRIVACY.html">プライバシー</a></li></ul></div>
+</div>
+<p class="legal"><span>© 2026 Bob's Used Books</span><a href="SCR-PRIVACY.html">プライバシー</a></p>
+</div>
+</footer>
+</div>
+</body></html>
