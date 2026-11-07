@@ -1,0 +1,27 @@
+{
+  "status": "proposed",
+  "document": "docs/design/data-model/logical-model.md",
+  "parser": {
+    "name": "mermaid",
+    "version": "12.3.0"
+  },
+  "source_sha256": "80e480283a9701a091cf98368cc726ef53994bbff4f4e8b31d432313de528d54",
+  "diagrams": [
+    {
+      "index": 1,
+      "type": "er",
+      "passed": true
+    },
+    {
+      "index": 2,
+      "type": "er",
+      "passed": true
+    },
+    {
+      "index": 3,
+      "type": "er",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

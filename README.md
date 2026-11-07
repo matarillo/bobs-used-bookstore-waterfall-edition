@@ -1,9 +1,9 @@
 # Bob's Used Bookstore
 
 中古書籍を顧客から**買い取り**、顧客に**売る**オンライン書店。
-本リポジトリは、そのシステムの **要件定義書** を収める。
+本リポジトリは、そのシステムの **要件定義書とデータモデル設計案** を収める。
 
-実装コードは含まない。**文書だけのリポジトリ**である。
+アプリケーションの実装コードは含まない。**文書と、その設計を検証する資材のリポジトリ**である。
 
 ---
 
@@ -39,13 +39,16 @@ Bob's Used Books は実店舗を長く営んできた中古書店である。
 | 業務ルールのうち店が決めるもの（税率・納期・しきい値） | それをどの層で守るか |
 | 規模・体制・7 か月のスケジュール・25 人月の工数 | 人月単価（契約条件として別途定める） |
 
-**基本設計以降の成果物はまだ無い。**
+**データモデルの基本設計案**は [docs/design/data-model/](docs/design/data-model/README.md) にある。
+概念・論理・物理モデル、PostgreSQLのDDL、トランザクション契約、DB検証を含む。
+設計案の状態は `proposed` であり、合意済み要件と区別する。他の基本設計成果物は別途作成する。
 
 ## 文書の入口
 
 | 目的 | 読むもの |
 | --- | --- |
 | **全体を知る** | [docs/README.md](docs/README.md) — 文書地図 |
+| **データモデルを確認する** | [データモデル設計](docs/design/data-model/README.md) — 概念・論理・物理モデルとDDL・検証 |
 | 用語を引く | [docs/glossary.md](docs/glossary.md) |
 | 何を作るのか確かめる | [02 スコープ](docs/requirements/02-scope.md) → [04 機能要件](docs/requirements/04-functional-requirements.md) → [06 画面](docs/requirements/06-screens.md) |
 | 業務を確認する | [03 業務フロー](docs/requirements/03-actors-and-business-flow.md) → [05 業務ルール](docs/requirements/05-business-rules.md) |

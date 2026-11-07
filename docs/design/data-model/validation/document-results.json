@@ -1,0 +1,40 @@
+{
+  "status": "proposed",
+  "checks": [
+    {
+      "name": "All design documents declare proposed status",
+      "passed": true
+    },
+    {
+      "name": "Local document links and referenced anchors exist",
+      "passed": true
+    },
+    {
+      "name": "SQL verification passed and hashes match the current inputs",
+      "passed": true
+    },
+    {
+      "name": "Requirement mapping is complete and every test reference exists",
+      "passed": true
+    },
+    {
+      "name": "All twelve patterns are assessed",
+      "passed": true
+    },
+    {
+      "name": "Mermaid parse evidence matches the current diagrams",
+      "passed": true
+    },
+    {
+      "name": "All schema tables and FKs are represented in the generated documents",
+      "passed": true
+    },
+    {
+      "name": "Repository entry points link to the data model",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "documents": 7,
+  "db_cases": 31
+}

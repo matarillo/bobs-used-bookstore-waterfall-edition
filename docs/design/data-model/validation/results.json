@@ -1,0 +1,176 @@
+{
+  "status": "proposed",
+  "scope": "PostgreSQL constraints and executable transaction design examples; not API acceptance",
+  "postgres": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.51.36260, 64-bit",
+  "isolation": "READ COMMITTED",
+  "checks": [
+    {
+      "id": "T01",
+      "description": "DDL、分類種別・名称一意性・数量・金額制約",
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "description": "手入力在庫→注文→受付→出荷→配達、出荷で二重減算しない",
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "description": "金額・原価・配送先の凍結と住所の論理削除",
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "description": "四捨五入は注文小計に一度、負の粗利を保持",
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "description": "確認時の在庫切れを除外し、欲しい物と除外明細をかごに残す",
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "description": "確認後の在庫競合は複数明細を含む注文全体をロールバック",
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "description": "在庫更新後の失敗で注文・履歴・かご・冪等記録をまとめて戻す",
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "description": "取消は追加事実、返却は一回、売上から除外",
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "description": "棚卸調整の前後・差分・理由・実施者",
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "description": "買取申込→承認→受領→支払→棚入れ→販売",
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "description": "未支払棚入れ・不正遷移・却下理由なしを拒否",
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "description": "本人の取下げは承認待ちだけ、他人のデータは操作できない",
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "description": "UTC月初・月末境界、注文日と支払日を別集計",
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "description": "納期超過・在庫僅少と一覧件数が一致、在庫0も僅少",
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "description": "同一キー・同一内容は既存結果、異内容は競合",
+      "passed": true
+    },
+    {
+      "id": "T16",
+      "description": "最終在庫の並行注文は一方のみ成立（実ロック待ち）",
+      "passed": true
+    },
+    {
+      "id": "T17",
+      "description": "出荷と取消の競合は出荷のみ成立、在庫返却なし",
+      "passed": true
+    },
+    {
+      "id": "T18",
+      "description": "二重取消の競合は一度だけ返却",
+      "passed": true
+    },
+    {
+      "id": "T19",
+      "description": "別キーの二重棚入れは一方のみ成立",
+      "passed": true
+    },
+    {
+      "id": "T20",
+      "description": "同一キーの並行再送は同じ注文結果を返す",
+      "passed": true
+    },
+    {
+      "id": "T21",
+      "description": "棚卸調整と注文は直列化し、在庫不足注文を拒否",
+      "passed": true
+    },
+    {
+      "id": "T22",
+      "description": "現在状態の破損・欠落を検出し正本から再構築",
+      "passed": true
+    },
+    {
+      "id": "T23",
+      "description": "在庫履歴の連続性違反と不正状態遷移を照合で検出",
+      "passed": true
+    },
+    {
+      "id": "T24",
+      "description": "かごの現在価格・購入種別のみ集計、在庫切れ投入を拒否",
+      "passed": true
+    },
+    {
+      "id": "T25",
+      "description": "ログイン時のかご統合は重複数量の最大、他人を統合しない",
+      "passed": true
+    },
+    {
+      "id": "T26",
+      "description": "未ログインかごだけ一年超で掃除、ログイン済は保持",
+      "passed": true
+    },
+    {
+      "id": "T27",
+      "description": "非公開書籍を検索・売れ筋から除外し管理在庫に保持",
+      "passed": true
+    },
+    {
+      "id": "T28",
+      "description": "確認後の価格変更・かご変更は再確認を要求",
+      "passed": true
+    },
+    {
+      "id": "T29",
+      "description": "取消が先に成立した場合は出荷を拒否し一度だけ返却",
+      "passed": true
+    },
+    {
+      "id": "T30",
+      "description": "大きな十進金額でも凍結値と計算結果のセントを失わない",
+      "passed": true
+    },
+    {
+      "id": "T31",
+      "description": "金額上限超過は取引全体を失敗させる",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "hashes": {
+    "../sql/schema.sql": "35c6a1f427453ee7a446d3006e7e6ab51f6b56ff8a818cc02c7ddeb72099174b",
+    "../sql/views.sql": "c1079c0e230375189a883a3b6c2c015fddde5d2e90b5f1e6d781b3180e5b649e",
+    "../sql/queries.sql": "83e94d321c48d23695c53e0e8d53007f6214df98b1f9549c1b86cfd1911cc751",
+    "../sql/reconcile.sql": "0a99d688f40be69f1d7571d3204e6d12a467e02cd97e7881ff8b95d2a9bba369",
+    "../sql/rebuild.sql": "b42f88693bd4e37f8718a3c9cb546e76d4d289e419f2a81cbd4148c13bfd5442",
+    "../sql/cleanup.sql": "7781b4e1d31532042232bbcce6444bb75dfc9da2a11f9dfb331dd2abfa632a69",
+    "fixture.sql": "bd4078b6e4936b10d452bbb05c00a27764c8b64be76e8095f95666822b70c819",
+    "contracts.mjs": "3384b937ff73ea8a7cc5de8d63e90ef8ad740939a2b8677ee9eb7fd161979d79",
+    "db.mjs": "72c0e2d46b984232ae042ea4141fd1c18442e0f93a8daf285b5bec28d0176eb9",
+    "run.mjs": "1ee778deb54af8ba94c59aa31ffd52abdf022ec0a85b87225a1ce19962e03ca2"
+  }
+}

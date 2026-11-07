@@ -1,0 +1,17 @@
+{
+  "status": "proposed",
+  "document": "docs/design/data-model/conceptual-model.md",
+  "parser": {
+    "name": "mermaid",
+    "version": "12.3.0"
+  },
+  "source_sha256": "dc8a396cf78fe843802a109bbfd6cc81b386491b2f2f3bd3171dc1ac8beb1d54",
+  "diagrams": [
+    {
+      "index": 1,
+      "type": "er",
+      "passed": true
+    }
+  ],
+  "passed": true
+}
