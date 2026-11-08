@@ -1,0 +1,51 @@
+export const tables = {
+  customer: ['顧客','顧客','通常更新。subjectは不変、氏名は認証基盤から同期'],
+  address: ['配送先住所','顧客','通常更新。所有者は不変、削除は無効化のみ'],
+  reference_item: ['参照データ項目','在庫','名称のみ通常更新。ID・種別は不変'],
+  book: ['書籍の現在属性','在庫','通常更新。IDは不変、在庫と原価は別表'],
+  book_receipt: ['書籍の取得事実','在庫','凍結。各書籍に一件、UPDATE/DELETEを提供しない'],
+  offer: ['買取申込の成立事実','買取','凍結。申込価格・書誌・分類を変更しない'],
+  offer_event: ['買取の進行事実','買取','追記。既存行は変更しない'],
+  offer_state: ['買取の現在状態','買取','派生。offer_eventと同一取引で更新'],
+  cart: ['かご','購入準備','通常更新。顧客との紐付けはログイン統合時のみ'],
+  cart_item: ['かご明細・欲しい物','購入準備','通常更新・削除。取引履歴ではない'],
+  sales_order: ['注文の合意・配送先凍結値','販売','凍結。合計と配送先も変更しない'],
+  order_item: ['注文と書籍の成立関係','販売','凍結。数量・売価・原価を変更しない'],
+  order_event: ['注文の進行事実','販売','追記。取消も追加行として保存'],
+  order_state: ['注文の現在状態','販売','派生。order_eventと同一取引で更新'],
+  stock_movement: ['在庫増減・棚卸調整の事実','在庫','追記。各書籍の連番、既存行は変更しない'],
+  stock_balance: ['現在の販売可能在庫','在庫','派生。stock_movementと同一取引で更新'],
+  command_receipt: ['コマンドの実行結果','操作を実行する所有者','取引内で結果を確定、コミット後は変更しない']
+};
+export const meanings = {
+  subject:'外部認証基盤の不変な主体識別子', family_name:'同期した姓の現在値', given_name:'同期した名の現在値', synced_at:'氏名を同期したUTC時刻',
+  customer_subject:'所有する顧客の主体', address_id:'配送先住所ID', line1:'住所行1', line2:'住所行2（任意）', city:'市区町村',
+  state_code:'米国50州またはDCのコード', postal_code:'5桁またはZIP+4', country_code:'国コードUS', active:'住所選択肢として有効か',
+  reference_id:'参照データID', name:'選択肢の名称（前後空白なし）', offer_id:'買取オファーID',
+  title:'書名', author:'著者', isbn:'ISBN（任意・一意性なし）', publisher_id:'出版社の参照項目ID', book_type_id:'書籍種別の参照項目ID',
+  genre_id:'ジャンルの参照項目ID', condition_id:'コンディションの参照項目ID',
+  publisher_kind:'PUBLISHER固定の生成列', book_type_kind:'BOOK_TYPE固定の生成列', genre_kind:'GENRE固定の生成列', condition_kind:'CONDITION固定の生成列',
+  description:'概要', offered_price:'顧客が申し込んだ買取価格（凍結）', submitted_at:'買取申込が成立したUTC日時',
+  sequence_no:'対象内で1から増える事実の連番', previous_sequence:'直前の連番。初回事実のみNULL', actor_subject:'実行した本人／スタッフの主体',
+  occurred_at:'業務成立／操作のUTC時刻（支払は実際の支払時刻）', recorded_at:'DBへ記録したUTC時刻',
+  reason:'却下／棚卸調整の理由。該当する種別では非空必須', head_sequence:'派生現在値の根拠となる連鎖末端の連番', status:'現在の進行状態',
+  stocked:'棚入れ済か。PAID状態とは別の派生値', book_id:'書籍の在庫管理単位ID', current_price:'現在の税抜売価',
+  cover_url:'適正判定済み表紙のHTTPS配信URL（任意）', unlisted:'公開検索・トップの対象外か',
+  source_offer_id:'供給元オファー。手入力時NULL、値ありの場合一意', purchase_cost:'登録時に確定した単位仕入原価', initial_quantity:'登録／棚入れの初期数量',
+  cart_id:'暗号学的乱数UUIDのかご識別子', revision:'かご変更ごとに増える楽観照合番号', updated_at:'かごの最終操作UTC時刻',
+  quantity:'正の整数数量', order_id:'注文ID', order_number:'顧客に提示する一意な注文番号', source_address_id:'配送先値のコピー元となった本人住所ID',
+  ship_line1:'凍結した住所行1', ship_line2:'凍結した住所行2', ship_city:'凍結した市区町村', ship_state_code:'凍結した州コード',
+  ship_postal_code:'凍結した郵便番号', ship_country_code:'凍結した国コードUS', ordered_at:'注文確定のUTC日時',
+  delivery_due_date:'UTC注文日付＋7日の納品予定日', subtotal:'注文時の税抜小計', tax_rate:'適用税率0.10（凍結）', tax:'小計×税率を小数2桁に四捨五入',
+  total:'凍結した税込合計', frozen_price:'注文時の単位税抜売価', frozen_cost:'注文時の単位仕入原価',
+  quantity_before:'ロック後の変更前の販売可能在庫', quantity_after:'変更後の販売可能在庫', quantity_delta:'変更後−変更前の生成列',
+  order_event_sequence:'根拠となる元注文のイベント連番', available:'販売可能在庫の差分合計（非負）',
+  operation:'業務コマンド名', command_key:'再送時にも同じUUIDキー', payload_digest:'サーバが正規化内容から計算したSHA-256小文字16進64文字',
+  result:'確定した結果のJSONオブジェクト。個人情報のコピーを避けID・合計等に限る'
+};
+export const kinds = {
+  reference_item:'PUBLISHER / BOOK_TYPE / GENRE / CONDITION', cart_item:'PURCHASE / WISH',
+  order_event:'PLACED / ACCEPTED / SHIPPED / DELIVERED / CANCELLED',
+  offer_event:'SUBMITTED / APPROVED / RECEIVED / PAID / REJECTED / WITHDRAWN / STOCKED',
+  stock_movement:'REGISTERED / SHELVED / ORDERED / CANCELLED / ADJUSTED'
+};

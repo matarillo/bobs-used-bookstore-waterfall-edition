@@ -1,0 +1,3980 @@
+{
+  "columns": [
+    {
+      "table_name": "address",
+      "name": "address_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "a",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "customer_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "line1",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "line2",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "city",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "state_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "postal_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "address",
+      "name": "country_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "'US'::text"
+    },
+    {
+      "table_name": "address",
+      "name": "active",
+      "type": "boolean",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "true"
+    },
+    {
+      "table_name": "book",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "a",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "title",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "author",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "isbn",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "publisher_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "publisher_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'PUBLISHER'::text"
+    },
+    {
+      "table_name": "book",
+      "name": "book_type_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "book_type_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'BOOK_TYPE'::text"
+    },
+    {
+      "table_name": "book",
+      "name": "genre_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "genre_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'GENRE'::text"
+    },
+    {
+      "table_name": "book",
+      "name": "condition_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "condition_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'CONDITION'::text"
+    },
+    {
+      "table_name": "book",
+      "name": "current_price",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "description",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "''::text"
+    },
+    {
+      "table_name": "book",
+      "name": "cover_url",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book",
+      "name": "unlisted",
+      "type": "boolean",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "false"
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "source_offer_id",
+      "type": "bigint",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "purchase_cost",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "initial_quantity",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "actor_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "recorded_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_id",
+      "type": "uuid",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "cart",
+      "name": "customer_subject",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "cart",
+      "name": "revision",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "0"
+    },
+    {
+      "table_name": "cart",
+      "name": "updated_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_id",
+      "type": "uuid",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "cart_item",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "cart_item",
+      "name": "kind",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "cart_item",
+      "name": "quantity",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "actor_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "operation",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_key",
+      "type": "uuid",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "payload_digest",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "result",
+      "type": "jsonb",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "recorded_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "customer",
+      "name": "subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "customer",
+      "name": "family_name",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "customer",
+      "name": "given_name",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "customer",
+      "name": "synced_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "a",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "customer_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "title",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "author",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "isbn",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "publisher_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "publisher_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'PUBLISHER'::text"
+    },
+    {
+      "table_name": "offer",
+      "name": "book_type_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "book_type_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'BOOK_TYPE'::text"
+    },
+    {
+      "table_name": "offer",
+      "name": "genre_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "genre_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'GENRE'::text"
+    },
+    {
+      "table_name": "offer",
+      "name": "condition_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "condition_kind",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "'CONDITION'::text"
+    },
+    {
+      "table_name": "offer",
+      "name": "description",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "''::text"
+    },
+    {
+      "table_name": "offer",
+      "name": "offered_price",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer",
+      "name": "submitted_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "sequence_no",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "previous_sequence",
+      "type": "integer",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "kind",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "actor_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "occurred_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_event",
+      "name": "recorded_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "offer_event",
+      "name": "reason",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_state",
+      "name": "head_sequence",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_state",
+      "name": "status",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "offer_state",
+      "name": "stocked",
+      "type": "boolean",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "false"
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "sequence_no",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "previous_sequence",
+      "type": "integer",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "kind",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "actor_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "occurred_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_event",
+      "name": "recorded_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_item",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_item",
+      "name": "quantity",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_item",
+      "name": "frozen_price",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_item",
+      "name": "frozen_cost",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_state",
+      "name": "head_sequence",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "order_state",
+      "name": "status",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "a",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "reference_item",
+      "name": "kind",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "reference_item",
+      "name": "name",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "order_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "a",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "order_number",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "customer_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "source_address_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_line1",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_line2",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_city",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_state_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_postal_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ship_country_code",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "ordered_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "delivery_due_date",
+      "type": "date",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "subtotal",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "tax_rate",
+      "type": "numeric(3,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "0.10"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "tax",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "sales_order",
+      "name": "total",
+      "type": "numeric(19,2)",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "head_sequence",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "available",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "book_id",
+      "type": "bigint",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "sequence_no",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "previous_sequence",
+      "type": "integer",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "kind",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "quantity_before",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "quantity_after",
+      "type": "integer",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "quantity_delta",
+      "type": "integer",
+      "required": false,
+      "identity": "",
+      "generated": "s",
+      "default_expression": "(quantity_after - quantity_before)"
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "order_id",
+      "type": "bigint",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "order_event_sequence",
+      "type": "integer",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "reason",
+      "type": "text",
+      "required": false,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "actor_subject",
+      "type": "text",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "occurred_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": null
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "recorded_at",
+      "type": "timestamp with time zone",
+      "required": true,
+      "identity": "",
+      "generated": "",
+      "default_expression": "CURRENT_TIMESTAMP"
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "address",
+      "name": "address_active_not_null",
+      "type": "n",
+      "definition": "NOT NULL active",
+      "columns": [
+        "active"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_address_id_customer_subject_key",
+      "type": "u",
+      "definition": "UNIQUE (address_id, customer_subject)",
+      "columns": [
+        "address_id",
+        "customer_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_address_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL address_id",
+      "columns": [
+        "address_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_city_check",
+      "type": "c",
+      "definition": "CHECK (btrim(city) <> ''::text)",
+      "columns": [
+        "city"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_city_not_null",
+      "type": "n",
+      "definition": "NOT NULL city",
+      "columns": [
+        "city"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_country_code_check",
+      "type": "c",
+      "definition": "CHECK (country_code = 'US'::text)",
+      "columns": [
+        "country_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_country_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL country_code",
+      "columns": [
+        "country_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_customer_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (customer_subject) REFERENCES customer(subject)",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "address",
+      "name": "address_customer_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL customer_subject",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_line1_check",
+      "type": "c",
+      "definition": "CHECK (btrim(line1) <> ''::text)",
+      "columns": [
+        "line1"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_line1_not_null",
+      "type": "n",
+      "definition": "NOT NULL line1",
+      "columns": [
+        "line1"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (address_id)",
+      "columns": [
+        "address_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_postal_code_check",
+      "type": "c",
+      "definition": "CHECK (postal_code ~ '^[0-9]{5}(-[0-9]{4})?$'::text)",
+      "columns": [
+        "postal_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_postal_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL postal_code",
+      "columns": [
+        "postal_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_state_code_check",
+      "type": "c",
+      "definition": "CHECK (state_code = ANY (ARRAY['AL'::text, 'AK'::text, 'AZ'::text, 'AR'::text, 'CA'::text, 'CO'::text, 'CT'::text, 'DE'::text, 'FL'::text, 'GA'::text, 'HI'::text, 'ID'::text, 'IL'::text, 'IN'::text, 'IA'::text, 'KS'::text, 'KY'::text, 'LA'::text, 'ME'::text, 'MD'::text, 'MA'::text, 'MI'::text, 'MN'::text, 'MS'::text, 'MO'::text, 'MT'::text, 'NE'::text, 'NV'::text, 'NH'::text, 'NJ'::text, 'NM'::text, 'NY'::text, 'NC'::text, 'ND'::text, 'OH'::text, 'OK'::text, 'OR'::text, 'PA'::text, 'RI'::text, 'SC'::text, 'SD'::text, 'TN'::text, 'TX'::text, 'UT'::text, 'VT'::text, 'VA'::text, 'WA'::text, 'WV'::text, 'WI'::text, 'WY'::text, 'DC'::text]))",
+      "columns": [
+        "state_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "address",
+      "name": "address_state_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL state_code",
+      "columns": [
+        "state_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_author_check",
+      "type": "c",
+      "definition": "CHECK (btrim(author) <> ''::text)",
+      "columns": [
+        "author"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_author_not_null",
+      "type": "n",
+      "definition": "NOT NULL author",
+      "columns": [
+        "author"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_book_type_id_book_type_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_type_id, book_type_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "book_type_id",
+        "book_type_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "book",
+      "name": "book_book_type_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_type_id",
+      "columns": [
+        "book_type_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_condition_id_condition_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (condition_id, condition_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "condition_id",
+        "condition_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "book",
+      "name": "book_condition_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL condition_id",
+      "columns": [
+        "condition_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_cover_url_check",
+      "type": "c",
+      "definition": "CHECK (cover_url IS NULL OR cover_url ~~ 'https://%'::text)",
+      "columns": [
+        "cover_url"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_current_price_check",
+      "type": "c",
+      "definition": "CHECK (current_price >= 0::numeric)",
+      "columns": [
+        "current_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_current_price_not_null",
+      "type": "n",
+      "definition": "NOT NULL current_price",
+      "columns": [
+        "current_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_description_not_null",
+      "type": "n",
+      "definition": "NOT NULL description",
+      "columns": [
+        "description"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_genre_id_genre_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (genre_id, genre_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "genre_id",
+        "genre_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "book",
+      "name": "book_genre_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL genre_id",
+      "columns": [
+        "genre_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_publisher_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL publisher_id",
+      "columns": [
+        "publisher_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_publisher_id_publisher_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (publisher_id, publisher_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "publisher_id",
+        "publisher_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "book",
+      "name": "book_title_check",
+      "type": "c",
+      "definition": "CHECK (btrim(title) <> ''::text)",
+      "columns": [
+        "title"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_title_not_null",
+      "type": "n",
+      "definition": "NOT NULL title",
+      "columns": [
+        "title"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book",
+      "name": "book_unlisted_not_null",
+      "type": "n",
+      "definition": "NOT NULL unlisted",
+      "columns": [
+        "unlisted"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_actor_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (actor_subject) REFERENCES customer(subject)",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_actor_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL actor_subject",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id) REFERENCES book(book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": "book",
+      "referenced_columns": [
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_check",
+      "type": "c",
+      "definition": "CHECK (source_offer_id IS NULL OR initial_quantity = 1)",
+      "columns": [
+        "source_offer_id",
+        "initial_quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_initial_quantity_check",
+      "type": "c",
+      "definition": "CHECK (initial_quantity >= 0)",
+      "columns": [
+        "initial_quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_initial_quantity_not_null",
+      "type": "n",
+      "definition": "NOT NULL initial_quantity",
+      "columns": [
+        "initial_quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_purchase_cost_check",
+      "type": "c",
+      "definition": "CHECK (purchase_cost >= 0::numeric)",
+      "columns": [
+        "purchase_cost"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_purchase_cost_not_null",
+      "type": "n",
+      "definition": "NOT NULL purchase_cost",
+      "columns": [
+        "purchase_cost"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_recorded_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL recorded_at",
+      "columns": [
+        "recorded_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_source_offer_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (source_offer_id) REFERENCES offer(offer_id)",
+      "columns": [
+        "source_offer_id"
+      ],
+      "referenced_table": "offer",
+      "referenced_columns": [
+        "offer_id"
+      ]
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_source_offer_id_key",
+      "type": "u",
+      "definition": "UNIQUE (source_offer_id)",
+      "columns": [
+        "source_offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_cart_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL cart_id",
+      "columns": [
+        "cart_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_customer_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (customer_subject) REFERENCES customer(subject)",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_customer_subject_key",
+      "type": "u",
+      "definition": "UNIQUE (customer_subject)",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (cart_id)",
+      "columns": [
+        "cart_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_revision_check",
+      "type": "c",
+      "definition": "CHECK (revision >= 0)",
+      "columns": [
+        "revision"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_revision_not_null",
+      "type": "n",
+      "definition": "NOT NULL revision",
+      "columns": [
+        "revision"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_updated_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL updated_at",
+      "columns": [
+        "updated_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id) REFERENCES book(book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": "book",
+      "referenced_columns": [
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_cart_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (cart_id) REFERENCES cart(cart_id) ON DELETE CASCADE",
+      "columns": [
+        "cart_id"
+      ],
+      "referenced_table": "cart",
+      "referenced_columns": [
+        "cart_id"
+      ]
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_cart_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL cart_id",
+      "columns": [
+        "cart_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_kind_check",
+      "type": "c",
+      "definition": "CHECK (kind = ANY (ARRAY['PURCHASE'::text, 'WISH'::text]))",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_kind_not_null",
+      "type": "n",
+      "definition": "NOT NULL kind",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (cart_id, book_id, kind)",
+      "columns": [
+        "cart_id",
+        "book_id",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_quantity_check",
+      "type": "c",
+      "definition": "CHECK (quantity > 0)",
+      "columns": [
+        "quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_quantity_not_null",
+      "type": "n",
+      "definition": "NOT NULL quantity",
+      "columns": [
+        "quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_actor_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (actor_subject) REFERENCES customer(subject)",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_actor_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL actor_subject",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_command_key_not_null",
+      "type": "n",
+      "definition": "NOT NULL command_key",
+      "columns": [
+        "command_key"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_operation_check",
+      "type": "c",
+      "definition": "CHECK (btrim(operation) <> ''::text)",
+      "columns": [
+        "operation"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_operation_not_null",
+      "type": "n",
+      "definition": "NOT NULL operation",
+      "columns": [
+        "operation"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_payload_digest_check",
+      "type": "c",
+      "definition": "CHECK (payload_digest ~ '^[0-9a-f]{64}$'::text)",
+      "columns": [
+        "payload_digest"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_payload_digest_not_null",
+      "type": "n",
+      "definition": "NOT NULL payload_digest",
+      "columns": [
+        "payload_digest"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (actor_subject, operation, command_key)",
+      "columns": [
+        "actor_subject",
+        "operation",
+        "command_key"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_recorded_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL recorded_at",
+      "columns": [
+        "recorded_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_result_check",
+      "type": "c",
+      "definition": "CHECK (jsonb_typeof(result) = 'object'::text)",
+      "columns": [
+        "result"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_result_not_null",
+      "type": "n",
+      "definition": "NOT NULL result",
+      "columns": [
+        "result"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_family_name_not_null",
+      "type": "n",
+      "definition": "NOT NULL family_name",
+      "columns": [
+        "family_name"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_given_name_not_null",
+      "type": "n",
+      "definition": "NOT NULL given_name",
+      "columns": [
+        "given_name"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (subject)",
+      "columns": [
+        "subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_subject_check",
+      "type": "c",
+      "definition": "CHECK (btrim(subject) <> ''::text)",
+      "columns": [
+        "subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL subject",
+      "columns": [
+        "subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_synced_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL synced_at",
+      "columns": [
+        "synced_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_author_check",
+      "type": "c",
+      "definition": "CHECK (btrim(author) <> ''::text)",
+      "columns": [
+        "author"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_author_not_null",
+      "type": "n",
+      "definition": "NOT NULL author",
+      "columns": [
+        "author"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_book_type_id_book_type_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_type_id, book_type_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "book_type_id",
+        "book_type_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_book_type_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_type_id",
+      "columns": [
+        "book_type_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_condition_id_condition_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (condition_id, condition_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "condition_id",
+        "condition_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_condition_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL condition_id",
+      "columns": [
+        "condition_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_customer_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (customer_subject) REFERENCES customer(subject)",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_customer_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL customer_subject",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_description_not_null",
+      "type": "n",
+      "definition": "NOT NULL description",
+      "columns": [
+        "description"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_genre_id_genre_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (genre_id, genre_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "genre_id",
+        "genre_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_genre_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL genre_id",
+      "columns": [
+        "genre_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_offer_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL offer_id",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_offered_price_check",
+      "type": "c",
+      "definition": "CHECK (offered_price >= 1::numeric AND offered_price <= 1000000::numeric)",
+      "columns": [
+        "offered_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_offered_price_not_null",
+      "type": "n",
+      "definition": "NOT NULL offered_price",
+      "columns": [
+        "offered_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (offer_id)",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_publisher_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL publisher_id",
+      "columns": [
+        "publisher_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_publisher_id_publisher_kind_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (publisher_id, publisher_kind) REFERENCES reference_item(reference_id, kind)",
+      "columns": [
+        "publisher_id",
+        "publisher_kind"
+      ],
+      "referenced_table": "reference_item",
+      "referenced_columns": [
+        "reference_id",
+        "kind"
+      ]
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_submitted_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL submitted_at",
+      "columns": [
+        "submitted_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_title_check",
+      "type": "c",
+      "definition": "CHECK (btrim(title) <> ''::text)",
+      "columns": [
+        "title"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_title_not_null",
+      "type": "n",
+      "definition": "NOT NULL title",
+      "columns": [
+        "title"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_actor_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (actor_subject) REFERENCES customer(subject)",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_actor_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL actor_subject",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no = 1 AND previous_sequence IS NULL AND kind = 'SUBMITTED'::text OR sequence_no > 1 AND previous_sequence = (sequence_no - 1) AND previous_sequence IS NOT NULL AND kind <> 'SUBMITTED'::text)",
+      "columns": [
+        "sequence_no",
+        "previous_sequence",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_check1",
+      "type": "c",
+      "definition": "CHECK (kind <> 'REJECTED'::text OR reason IS NOT NULL AND btrim(reason) <> ''::text)",
+      "columns": [
+        "kind",
+        "reason"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_kind_check",
+      "type": "c",
+      "definition": "CHECK (kind = ANY (ARRAY['SUBMITTED'::text, 'APPROVED'::text, 'RECEIVED'::text, 'PAID'::text, 'REJECTED'::text, 'WITHDRAWN'::text, 'STOCKED'::text]))",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_kind_not_null",
+      "type": "n",
+      "definition": "NOT NULL kind",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_occurred_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL occurred_at",
+      "columns": [
+        "occurred_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_offer_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (offer_id) REFERENCES offer(offer_id)",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": "offer",
+      "referenced_columns": [
+        "offer_id"
+      ]
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_offer_id_kind_key",
+      "type": "u",
+      "definition": "UNIQUE (offer_id, kind)",
+      "columns": [
+        "offer_id",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_offer_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL offer_id",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_offer_id_previous_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (offer_id, previous_sequence) REFERENCES offer_event(offer_id, sequence_no)",
+      "columns": [
+        "offer_id",
+        "previous_sequence"
+      ],
+      "referenced_table": "offer_event",
+      "referenced_columns": [
+        "offer_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (offer_id, sequence_no)",
+      "columns": [
+        "offer_id",
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_recorded_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL recorded_at",
+      "columns": [
+        "recorded_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_sequence_no_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no > 0)",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_sequence_no_not_null",
+      "type": "n",
+      "definition": "NOT NULL sequence_no",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_check",
+      "type": "c",
+      "definition": "CHECK (NOT stocked OR status = 'PAID'::text)",
+      "columns": [
+        "stocked",
+        "status"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_head_sequence_not_null",
+      "type": "n",
+      "definition": "NOT NULL head_sequence",
+      "columns": [
+        "head_sequence"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_offer_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (offer_id) REFERENCES offer(offer_id)",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": "offer",
+      "referenced_columns": [
+        "offer_id"
+      ]
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_offer_id_head_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (offer_id, head_sequence) REFERENCES offer_event(offer_id, sequence_no)",
+      "columns": [
+        "offer_id",
+        "head_sequence"
+      ],
+      "referenced_table": "offer_event",
+      "referenced_columns": [
+        "offer_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_offer_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL offer_id",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (offer_id)",
+      "columns": [
+        "offer_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_status_check",
+      "type": "c",
+      "definition": "CHECK (status = ANY (ARRAY['PENDING_APPROVAL'::text, 'APPROVED'::text, 'RECEIVED'::text, 'PAID'::text, 'REJECTED'::text, 'WITHDRAWN'::text]))",
+      "columns": [
+        "status"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_status_not_null",
+      "type": "n",
+      "definition": "NOT NULL status",
+      "columns": [
+        "status"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_stocked_not_null",
+      "type": "n",
+      "definition": "NOT NULL stocked",
+      "columns": [
+        "stocked"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_actor_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (actor_subject) REFERENCES customer(subject)",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_actor_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL actor_subject",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no = 1 AND previous_sequence IS NULL AND kind = 'PLACED'::text OR sequence_no > 1 AND previous_sequence = (sequence_no - 1) AND previous_sequence IS NOT NULL AND kind <> 'PLACED'::text)",
+      "columns": [
+        "sequence_no",
+        "previous_sequence",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_kind_check",
+      "type": "c",
+      "definition": "CHECK (kind = ANY (ARRAY['PLACED'::text, 'ACCEPTED'::text, 'SHIPPED'::text, 'DELIVERED'::text, 'CANCELLED'::text]))",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_kind_not_null",
+      "type": "n",
+      "definition": "NOT NULL kind",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_occurred_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL occurred_at",
+      "columns": [
+        "occurred_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_order_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id) REFERENCES sales_order(order_id)",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": "sales_order",
+      "referenced_columns": [
+        "order_id"
+      ]
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_order_id_kind_key",
+      "type": "u",
+      "definition": "UNIQUE (order_id, kind)",
+      "columns": [
+        "order_id",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_order_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL order_id",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_order_id_previous_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id, previous_sequence) REFERENCES order_event(order_id, sequence_no)",
+      "columns": [
+        "order_id",
+        "previous_sequence"
+      ],
+      "referenced_table": "order_event",
+      "referenced_columns": [
+        "order_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (order_id, sequence_no)",
+      "columns": [
+        "order_id",
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_recorded_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL recorded_at",
+      "columns": [
+        "recorded_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_sequence_no_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no > 0)",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_sequence_no_not_null",
+      "type": "n",
+      "definition": "NOT NULL sequence_no",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id) REFERENCES book(book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": "book",
+      "referenced_columns": [
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_frozen_cost_check",
+      "type": "c",
+      "definition": "CHECK (frozen_cost >= 0::numeric)",
+      "columns": [
+        "frozen_cost"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_frozen_cost_not_null",
+      "type": "n",
+      "definition": "NOT NULL frozen_cost",
+      "columns": [
+        "frozen_cost"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_frozen_price_check",
+      "type": "c",
+      "definition": "CHECK (frozen_price >= 0::numeric)",
+      "columns": [
+        "frozen_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_frozen_price_not_null",
+      "type": "n",
+      "definition": "NOT NULL frozen_price",
+      "columns": [
+        "frozen_price"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_order_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id) REFERENCES sales_order(order_id)",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": "sales_order",
+      "referenced_columns": [
+        "order_id"
+      ]
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_order_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL order_id",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (order_id, book_id)",
+      "columns": [
+        "order_id",
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_quantity_check",
+      "type": "c",
+      "definition": "CHECK (quantity > 0)",
+      "columns": [
+        "quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_quantity_not_null",
+      "type": "n",
+      "definition": "NOT NULL quantity",
+      "columns": [
+        "quantity"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_head_sequence_not_null",
+      "type": "n",
+      "definition": "NOT NULL head_sequence",
+      "columns": [
+        "head_sequence"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_order_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id) REFERENCES sales_order(order_id)",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": "sales_order",
+      "referenced_columns": [
+        "order_id"
+      ]
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_order_id_head_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id, head_sequence) REFERENCES order_event(order_id, sequence_no)",
+      "columns": [
+        "order_id",
+        "head_sequence"
+      ],
+      "referenced_table": "order_event",
+      "referenced_columns": [
+        "order_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_order_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL order_id",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (order_id)",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_status_check",
+      "type": "c",
+      "definition": "CHECK (status = ANY (ARRAY['PENDING'::text, 'ORDERED'::text, 'SHIPPED'::text, 'DELIVERED'::text, 'CANCELLED'::text]))",
+      "columns": [
+        "status"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_status_not_null",
+      "type": "n",
+      "definition": "NOT NULL status",
+      "columns": [
+        "status"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_kind_check",
+      "type": "c",
+      "definition": "CHECK (kind = ANY (ARRAY['PUBLISHER'::text, 'BOOK_TYPE'::text, 'GENRE'::text, 'CONDITION'::text]))",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_kind_not_null",
+      "type": "n",
+      "definition": "NOT NULL kind",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_name_check",
+      "type": "c",
+      "definition": "CHECK (name = btrim(name) AND name <> ''::text)",
+      "columns": [
+        "name"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_name_not_null",
+      "type": "n",
+      "definition": "NOT NULL name",
+      "columns": [
+        "name"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (reference_id)",
+      "columns": [
+        "reference_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_reference_id_kind_key",
+      "type": "u",
+      "definition": "UNIQUE (reference_id, kind)",
+      "columns": [
+        "reference_id",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_reference_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL reference_id",
+      "columns": [
+        "reference_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_check",
+      "type": "c",
+      "definition": "CHECK (tax >= 0::numeric AND tax = round(subtotal * tax_rate, 2))",
+      "columns": [
+        "tax",
+        "subtotal",
+        "tax_rate"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_check1",
+      "type": "c",
+      "definition": "CHECK (total = (subtotal + tax))",
+      "columns": [
+        "total",
+        "subtotal",
+        "tax"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_check2",
+      "type": "c",
+      "definition": "CHECK (delivery_due_date = ((ordered_at AT TIME ZONE 'UTC'::text)::date + 7))",
+      "columns": [
+        "delivery_due_date",
+        "ordered_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_customer_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (customer_subject) REFERENCES customer(subject)",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_customer_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL customer_subject",
+      "columns": [
+        "customer_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_delivery_due_date_not_null",
+      "type": "n",
+      "definition": "NOT NULL delivery_due_date",
+      "columns": [
+        "delivery_due_date"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_order_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL order_id",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_order_number_check",
+      "type": "c",
+      "definition": "CHECK (btrim(order_number) <> ''::text)",
+      "columns": [
+        "order_number"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_order_number_key",
+      "type": "u",
+      "definition": "UNIQUE (order_number)",
+      "columns": [
+        "order_number"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_order_number_not_null",
+      "type": "n",
+      "definition": "NOT NULL order_number",
+      "columns": [
+        "order_number"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ordered_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL ordered_at",
+      "columns": [
+        "ordered_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (order_id)",
+      "columns": [
+        "order_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_city_check",
+      "type": "c",
+      "definition": "CHECK (btrim(ship_city) <> ''::text)",
+      "columns": [
+        "ship_city"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_city_not_null",
+      "type": "n",
+      "definition": "NOT NULL ship_city",
+      "columns": [
+        "ship_city"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_country_code_check",
+      "type": "c",
+      "definition": "CHECK (ship_country_code = 'US'::text)",
+      "columns": [
+        "ship_country_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_country_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL ship_country_code",
+      "columns": [
+        "ship_country_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_line1_check",
+      "type": "c",
+      "definition": "CHECK (btrim(ship_line1) <> ''::text)",
+      "columns": [
+        "ship_line1"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_line1_not_null",
+      "type": "n",
+      "definition": "NOT NULL ship_line1",
+      "columns": [
+        "ship_line1"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_postal_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL ship_postal_code",
+      "columns": [
+        "ship_postal_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_ship_state_code_not_null",
+      "type": "n",
+      "definition": "NOT NULL ship_state_code",
+      "columns": [
+        "ship_state_code"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_source_address_id_customer_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (source_address_id, customer_subject) REFERENCES address(address_id, customer_subject)",
+      "columns": [
+        "source_address_id",
+        "customer_subject"
+      ],
+      "referenced_table": "address",
+      "referenced_columns": [
+        "address_id",
+        "customer_subject"
+      ]
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_source_address_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL source_address_id",
+      "columns": [
+        "source_address_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_subtotal_check",
+      "type": "c",
+      "definition": "CHECK (subtotal >= 0::numeric)",
+      "columns": [
+        "subtotal"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_subtotal_not_null",
+      "type": "n",
+      "definition": "NOT NULL subtotal",
+      "columns": [
+        "subtotal"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_tax_not_null",
+      "type": "n",
+      "definition": "NOT NULL tax",
+      "columns": [
+        "tax"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_tax_rate_check",
+      "type": "c",
+      "definition": "CHECK (tax_rate = 0.10)",
+      "columns": [
+        "tax_rate"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_tax_rate_not_null",
+      "type": "n",
+      "definition": "NOT NULL tax_rate",
+      "columns": [
+        "tax_rate"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_total_not_null",
+      "type": "n",
+      "definition": "NOT NULL total",
+      "columns": [
+        "total"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_available_check",
+      "type": "c",
+      "definition": "CHECK (available >= 0)",
+      "columns": [
+        "available"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_available_not_null",
+      "type": "n",
+      "definition": "NOT NULL available",
+      "columns": [
+        "available"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id) REFERENCES book(book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": "book",
+      "referenced_columns": [
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_book_id_head_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id, head_sequence) REFERENCES stock_movement(book_id, sequence_no)",
+      "columns": [
+        "book_id",
+        "head_sequence"
+      ],
+      "referenced_table": "stock_movement",
+      "referenced_columns": [
+        "book_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_head_sequence_not_null",
+      "type": "n",
+      "definition": "NOT NULL head_sequence",
+      "columns": [
+        "head_sequence"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_actor_subject_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (actor_subject) REFERENCES customer(subject)",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": "customer",
+      "referenced_columns": [
+        "subject"
+      ]
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_actor_subject_not_null",
+      "type": "n",
+      "definition": "NOT NULL actor_subject",
+      "columns": [
+        "actor_subject"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id) REFERENCES book(book_id)",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": "book",
+      "referenced_columns": [
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_book_id_not_null",
+      "type": "n",
+      "definition": "NOT NULL book_id",
+      "columns": [
+        "book_id"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_book_id_previous_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (book_id, previous_sequence) REFERENCES stock_movement(book_id, sequence_no)",
+      "columns": [
+        "book_id",
+        "previous_sequence"
+      ],
+      "referenced_table": "stock_movement",
+      "referenced_columns": [
+        "book_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no = 1 AND previous_sequence IS NULL AND quantity_before = 0 AND (kind = ANY (ARRAY['REGISTERED'::text, 'SHELVED'::text])) OR sequence_no > 1 AND previous_sequence = (sequence_no - 1) AND previous_sequence IS NOT NULL AND (kind <> ALL (ARRAY['REGISTERED'::text, 'SHELVED'::text])))",
+      "columns": [
+        "sequence_no",
+        "previous_sequence",
+        "quantity_before",
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check1",
+      "type": "c",
+      "definition": "CHECK ((kind = ANY (ARRAY['ORDERED'::text, 'CANCELLED'::text])) AND order_id IS NOT NULL AND order_event_sequence IS NOT NULL OR (kind <> ALL (ARRAY['ORDERED'::text, 'CANCELLED'::text])) AND order_id IS NULL AND order_event_sequence IS NULL)",
+      "columns": [
+        "kind",
+        "order_id",
+        "order_event_sequence"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check2",
+      "type": "c",
+      "definition": "CHECK (kind <> 'ORDERED'::text OR quantity_after < quantity_before)",
+      "columns": [
+        "kind",
+        "quantity_after",
+        "quantity_before"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check3",
+      "type": "c",
+      "definition": "CHECK (kind <> 'CANCELLED'::text OR quantity_after > quantity_before)",
+      "columns": [
+        "kind",
+        "quantity_after",
+        "quantity_before"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check4",
+      "type": "c",
+      "definition": "CHECK (kind <> 'SHELVED'::text OR quantity_after = 1)",
+      "columns": [
+        "kind",
+        "quantity_after"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_check5",
+      "type": "c",
+      "definition": "CHECK (kind <> 'ADJUSTED'::text OR quantity_after <> quantity_before AND reason IS NOT NULL AND btrim(reason) <> ''::text)",
+      "columns": [
+        "kind",
+        "quantity_after",
+        "quantity_before",
+        "reason"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_kind_check",
+      "type": "c",
+      "definition": "CHECK (kind = ANY (ARRAY['REGISTERED'::text, 'SHELVED'::text, 'ORDERED'::text, 'CANCELLED'::text, 'ADJUSTED'::text]))",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_kind_not_null",
+      "type": "n",
+      "definition": "NOT NULL kind",
+      "columns": [
+        "kind"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_occurred_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL occurred_at",
+      "columns": [
+        "occurred_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_order_id_book_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id, book_id) REFERENCES order_item(order_id, book_id)",
+      "columns": [
+        "order_id",
+        "book_id"
+      ],
+      "referenced_table": "order_item",
+      "referenced_columns": [
+        "order_id",
+        "book_id"
+      ]
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_order_id_order_event_sequence_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (order_id, order_event_sequence) REFERENCES order_event(order_id, sequence_no)",
+      "columns": [
+        "order_id",
+        "order_event_sequence"
+      ],
+      "referenced_table": "order_event",
+      "referenced_columns": [
+        "order_id",
+        "sequence_no"
+      ]
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (book_id, sequence_no)",
+      "columns": [
+        "book_id",
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_quantity_after_check",
+      "type": "c",
+      "definition": "CHECK (quantity_after >= 0)",
+      "columns": [
+        "quantity_after"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_quantity_after_not_null",
+      "type": "n",
+      "definition": "NOT NULL quantity_after",
+      "columns": [
+        "quantity_after"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_quantity_before_check",
+      "type": "c",
+      "definition": "CHECK (quantity_before >= 0)",
+      "columns": [
+        "quantity_before"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_quantity_before_not_null",
+      "type": "n",
+      "definition": "NOT NULL quantity_before",
+      "columns": [
+        "quantity_before"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_recorded_at_not_null",
+      "type": "n",
+      "definition": "NOT NULL recorded_at",
+      "columns": [
+        "recorded_at"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_sequence_no_check",
+      "type": "c",
+      "definition": "CHECK (sequence_no > 0)",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_sequence_no_not_null",
+      "type": "n",
+      "definition": "NOT NULL sequence_no",
+      "columns": [
+        "sequence_no"
+      ],
+      "referenced_table": null,
+      "referenced_columns": []
+    }
+  ],
+  "indexes": [
+    {
+      "table_name": "address",
+      "name": "address_address_id_customer_subject_key",
+      "definition": "CREATE UNIQUE INDEX address_address_id_customer_subject_key ON bookstore.address USING btree (address_id, customer_subject)"
+    },
+    {
+      "table_name": "address",
+      "name": "address_customer",
+      "definition": "CREATE INDEX address_customer ON bookstore.address USING btree (customer_subject, active)"
+    },
+    {
+      "table_name": "address",
+      "name": "address_pkey",
+      "definition": "CREATE UNIQUE INDEX address_pkey ON bookstore.address USING btree (address_id)"
+    },
+    {
+      "table_name": "book",
+      "name": "book_classification",
+      "definition": "CREATE INDEX book_classification ON bookstore.book USING btree (genre_id, condition_id, book_id)"
+    },
+    {
+      "table_name": "book",
+      "name": "book_pkey",
+      "definition": "CREATE UNIQUE INDEX book_pkey ON bookstore.book USING btree (book_id)"
+    },
+    {
+      "table_name": "book",
+      "name": "book_price",
+      "definition": "CREATE INDEX book_price ON bookstore.book USING btree (current_price, book_id) WHERE (NOT unlisted)"
+    },
+    {
+      "table_name": "book",
+      "name": "book_title",
+      "definition": "CREATE INDEX book_title ON bookstore.book USING btree (title, book_id) WHERE (NOT unlisted)"
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_pkey",
+      "definition": "CREATE UNIQUE INDEX book_receipt_pkey ON bookstore.book_receipt USING btree (book_id)"
+    },
+    {
+      "table_name": "book_receipt",
+      "name": "book_receipt_source_offer_id_key",
+      "definition": "CREATE UNIQUE INDEX book_receipt_source_offer_id_key ON bookstore.book_receipt USING btree (source_offer_id)"
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_customer_subject_key",
+      "definition": "CREATE UNIQUE INDEX cart_customer_subject_key ON bookstore.cart USING btree (customer_subject)"
+    },
+    {
+      "table_name": "cart",
+      "name": "cart_pkey",
+      "definition": "CREATE UNIQUE INDEX cart_pkey ON bookstore.cart USING btree (cart_id)"
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_book",
+      "definition": "CREATE INDEX cart_item_book ON bookstore.cart_item USING btree (book_id)"
+    },
+    {
+      "table_name": "cart_item",
+      "name": "cart_item_pkey",
+      "definition": "CREATE UNIQUE INDEX cart_item_pkey ON bookstore.cart_item USING btree (cart_id, book_id, kind)"
+    },
+    {
+      "table_name": "command_receipt",
+      "name": "command_receipt_pkey",
+      "definition": "CREATE UNIQUE INDEX command_receipt_pkey ON bookstore.command_receipt USING btree (actor_subject, operation, command_key)"
+    },
+    {
+      "table_name": "customer",
+      "name": "customer_pkey",
+      "definition": "CREATE UNIQUE INDEX customer_pkey ON bookstore.customer USING btree (subject)"
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_customer",
+      "definition": "CREATE INDEX offer_customer ON bookstore.offer USING btree (customer_subject, submitted_at, offer_id)"
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_date",
+      "definition": "CREATE INDEX offer_date ON bookstore.offer USING btree (submitted_at, offer_id)"
+    },
+    {
+      "table_name": "offer",
+      "name": "offer_pkey",
+      "definition": "CREATE UNIQUE INDEX offer_pkey ON bookstore.offer USING btree (offer_id)"
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_offer_id_kind_key",
+      "definition": "CREATE UNIQUE INDEX offer_event_offer_id_kind_key ON bookstore.offer_event USING btree (offer_id, kind)"
+    },
+    {
+      "table_name": "offer_event",
+      "name": "offer_event_pkey",
+      "definition": "CREATE UNIQUE INDEX offer_event_pkey ON bookstore.offer_event USING btree (offer_id, sequence_no)"
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_pkey",
+      "definition": "CREATE UNIQUE INDEX offer_state_pkey ON bookstore.offer_state USING btree (offer_id)"
+    },
+    {
+      "table_name": "offer_state",
+      "name": "offer_state_status",
+      "definition": "CREATE INDEX offer_state_status ON bookstore.offer_state USING btree (status, offer_id)"
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_order_id_kind_key",
+      "definition": "CREATE UNIQUE INDEX order_event_order_id_kind_key ON bookstore.order_event USING btree (order_id, kind)"
+    },
+    {
+      "table_name": "order_event",
+      "name": "order_event_pkey",
+      "definition": "CREATE UNIQUE INDEX order_event_pkey ON bookstore.order_event USING btree (order_id, sequence_no)"
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_book",
+      "definition": "CREATE INDEX order_item_book ON bookstore.order_item USING btree (book_id, order_id)"
+    },
+    {
+      "table_name": "order_item",
+      "name": "order_item_pkey",
+      "definition": "CREATE UNIQUE INDEX order_item_pkey ON bookstore.order_item USING btree (order_id, book_id)"
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_pkey",
+      "definition": "CREATE UNIQUE INDEX order_state_pkey ON bookstore.order_state USING btree (order_id)"
+    },
+    {
+      "table_name": "order_state",
+      "name": "order_state_status",
+      "definition": "CREATE INDEX order_state_status ON bookstore.order_state USING btree (status, order_id)"
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_pkey",
+      "definition": "CREATE UNIQUE INDEX reference_item_pkey ON bookstore.reference_item USING btree (reference_id)"
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_item_reference_id_kind_key",
+      "definition": "CREATE UNIQUE INDEX reference_item_reference_id_kind_key ON bookstore.reference_item USING btree (reference_id, kind)"
+    },
+    {
+      "table_name": "reference_item",
+      "name": "reference_name",
+      "definition": "CREATE UNIQUE INDEX reference_name ON bookstore.reference_item USING btree (kind, lower(name))"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "order_customer",
+      "definition": "CREATE INDEX order_customer ON bookstore.sales_order USING btree (customer_subject, ordered_at, order_id)"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "order_date",
+      "definition": "CREATE INDEX order_date ON bookstore.sales_order USING btree (ordered_at, order_id)"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "order_due",
+      "definition": "CREATE INDEX order_due ON bookstore.sales_order USING btree (delivery_due_date, order_id)"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_order_number_key",
+      "definition": "CREATE UNIQUE INDEX sales_order_order_number_key ON bookstore.sales_order USING btree (order_number)"
+    },
+    {
+      "table_name": "sales_order",
+      "name": "sales_order_pkey",
+      "definition": "CREATE UNIQUE INDEX sales_order_pkey ON bookstore.sales_order USING btree (order_id)"
+    },
+    {
+      "table_name": "stock_balance",
+      "name": "stock_balance_pkey",
+      "definition": "CREATE UNIQUE INDEX stock_balance_pkey ON bookstore.stock_balance USING btree (book_id)"
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_movement_pkey",
+      "definition": "CREATE UNIQUE INDEX stock_movement_pkey ON bookstore.stock_movement USING btree (book_id, sequence_no)"
+    },
+    {
+      "table_name": "stock_movement",
+      "name": "stock_order_once",
+      "definition": "CREATE UNIQUE INDEX stock_order_once ON bookstore.stock_movement USING btree (book_id, order_id, kind) WHERE (order_id IS NOT NULL)"
+    }
+  ],
+  "views": [
+    {
+      "name": "v_cart_totals",
+      "definition": " SELECT c.cart_id,\n    c.customer_subject,\n    c.revision,\n    (COALESCE(sum((b.current_price * (i.quantity)::numeric)) FILTER (WHERE (i.kind = 'PURCHASE'::text)), (0)::numeric))::numeric(19,2) AS subtotal,\n    round((COALESCE(sum((b.current_price * (i.quantity)::numeric)) FILTER (WHERE (i.kind = 'PURCHASE'::text)), (0)::numeric) * 0.10), 2) AS tax,\n    (COALESCE(sum((b.current_price * (i.quantity)::numeric)) FILTER (WHERE (i.kind = 'PURCHASE'::text)), (0)::numeric) + round((COALESCE(sum((b.current_price * (i.quantity)::numeric)) FILTER (WHERE (i.kind = 'PURCHASE'::text)), (0)::numeric) * 0.10), 2)) AS total\n   FROM ((cart c\n     LEFT JOIN cart_item i USING (cart_id))\n     LEFT JOIN book b USING (book_id))\n  GROUP BY c.cart_id;"
+    },
+    {
+      "name": "v_inventory",
+      "definition": " SELECT b.book_id,\n    b.title,\n    b.author,\n    b.isbn,\n    b.publisher_id,\n    b.publisher_kind,\n    b.book_type_id,\n    b.book_type_kind,\n    b.genre_id,\n    b.genre_kind,\n    b.condition_id,\n    b.condition_kind,\n    b.current_price,\n    b.description,\n    b.cover_url,\n    b.unlisted,\n    r.purchase_cost,\n    r.source_offer_id,\n    r.recorded_at AS registered_at,\n    s.available,\n    (s.available = 0) AS out_of_stock,\n    (s.available <= 5) AS low_in_stock\n   FROM ((book b\n     JOIN book_receipt r USING (book_id))\n     JOIN stock_balance s USING (book_id));"
+    },
+    {
+      "name": "v_model_issues",
+      "definition": " WITH differences AS (\n         SELECT 'stock_cache'::text AS issue,\n            (COALESCE(f.book_id, c.book_id))::text AS entity\n           FROM (v_stock_fact_balance f\n             FULL JOIN stock_balance c USING (book_id))\n          WHERE ((c.book_id IS NULL) OR (f.book_id IS NULL) OR ((f.head_sequence IS DISTINCT FROM c.head_sequence) OR (f.available IS DISTINCT FROM c.available)))\n        UNION ALL\n         SELECT 'order_cache'::text,\n            (COALESCE(f.order_id, c.order_id))::text AS \"coalesce\"\n           FROM (v_order_fact_state f\n             FULL JOIN order_state c USING (order_id))\n          WHERE ((c.order_id IS NULL) OR (f.order_id IS NULL) OR ((f.head_sequence IS DISTINCT FROM c.head_sequence) OR (f.status IS DISTINCT FROM c.status)))\n        UNION ALL\n         SELECT 'offer_cache'::text,\n            (COALESCE(f.offer_id, c.offer_id))::text AS \"coalesce\"\n           FROM (v_offer_fact_state f\n             FULL JOIN offer_state c USING (offer_id))\n          WHERE ((c.offer_id IS NULL) OR (f.offer_id IS NULL) OR (((f.head_sequence IS DISTINCT FROM c.head_sequence) OR (f.status IS DISTINCT FROM c.status)) OR (f.stocked IS DISTINCT FROM c.stocked)))\n        UNION ALL\n         SELECT 'stock_chain'::text,\n            (m.book_id)::text AS book_id\n           FROM (stock_movement m\n             JOIN stock_movement p ON (((p.book_id = m.book_id) AND (p.sequence_no = m.previous_sequence))))\n          WHERE (m.quantity_before <> p.quantity_after)\n        UNION ALL\n         SELECT 'order_transition'::text,\n            (e.order_id)::text AS order_id\n           FROM (order_event e\n             JOIN order_event p ON (((p.order_id = e.order_id) AND (p.sequence_no = e.previous_sequence))))\n          WHERE ((((((p.kind <> 'PLACED'::text) OR (e.kind <> 'ACCEPTED'::text)) AND ((p.kind <> 'PLACED'::text) OR (e.kind <> 'CANCELLED'::text))) AND ((p.kind <> 'ACCEPTED'::text) OR (e.kind <> 'SHIPPED'::text))) AND ((p.kind <> 'ACCEPTED'::text) OR (e.kind <> 'CANCELLED'::text))) AND ((p.kind <> 'SHIPPED'::text) OR (e.kind <> 'DELIVERED'::text)))\n        UNION ALL\n         SELECT 'offer_transition'::text,\n            (e.offer_id)::text AS offer_id\n           FROM (offer_event e\n             JOIN offer_event p ON (((p.offer_id = e.offer_id) AND (p.sequence_no = e.previous_sequence))))\n          WHERE ((((((((p.kind <> 'SUBMITTED'::text) OR (e.kind <> 'APPROVED'::text)) AND ((p.kind <> 'SUBMITTED'::text) OR (e.kind <> 'REJECTED'::text))) AND ((p.kind <> 'SUBMITTED'::text) OR (e.kind <> 'WITHDRAWN'::text))) AND ((p.kind <> 'APPROVED'::text) OR (e.kind <> 'RECEIVED'::text))) AND ((p.kind <> 'RECEIVED'::text) OR (e.kind <> 'PAID'::text))) AND ((p.kind <> 'RECEIVED'::text) OR (e.kind <> 'REJECTED'::text))) AND ((p.kind <> 'PAID'::text) OR (e.kind <> 'STOCKED'::text)))\n        UNION ALL\n         SELECT 'order_amount_or_empty'::text,\n            (o.order_id)::text AS order_id\n           FROM (sales_order o\n             LEFT JOIN order_item i USING (order_id))\n          GROUP BY o.order_id\n         HAVING ((count(i.book_id) = 0) OR (o.subtotal <> sum(((i.quantity)::numeric * i.frozen_price))))\n        UNION ALL\n         SELECT 'book_receipt_missing'::text,\n            (b.book_id)::text AS book_id\n           FROM ((book b\n             LEFT JOIN book_receipt r USING (book_id))\n             LEFT JOIN stock_movement m ON (((m.book_id = b.book_id) AND (m.sequence_no = 1))))\n          WHERE ((r.book_id IS NULL) OR (m.book_id IS NULL) OR (r.initial_quantity <> m.quantity_after) OR ((r.source_offer_id IS NULL) AND (m.kind <> 'REGISTERED'::text)) OR ((r.source_offer_id IS NOT NULL) AND (m.kind <> 'SHELVED'::text)))\n        UNION ALL\n         SELECT 'order_root_missing'::text,\n            (o.order_id)::text AS order_id\n           FROM (sales_order o\n             LEFT JOIN order_event e ON (((e.order_id = o.order_id) AND (e.sequence_no = 1))))\n          WHERE ((e.order_id IS NULL) OR (e.occurred_at <> o.ordered_at))\n        UNION ALL\n         SELECT 'offer_root_missing'::text,\n            (o.offer_id)::text AS offer_id\n           FROM (offer o\n             LEFT JOIN offer_event e ON (((e.offer_id = o.offer_id) AND (e.sequence_no = 1))))\n          WHERE ((e.offer_id IS NULL) OR (e.occurred_at <> o.submitted_at))\n        UNION ALL\n         SELECT 'stock_order_effect'::text,\n            (((i.order_id)::text || ':'::text) || (i.book_id)::text)\n           FROM order_item i\n          WHERE ((NOT (EXISTS ( SELECT 1\n                   FROM stock_movement m\n                  WHERE ((m.order_id = i.order_id) AND (m.book_id = i.book_id) AND (m.kind = 'ORDERED'::text) AND (m.quantity_delta = (- i.quantity)))))) OR ((EXISTS ( SELECT 1\n                   FROM order_event e\n                  WHERE ((e.order_id = i.order_id) AND (e.kind = 'CANCELLED'::text)))) IS DISTINCT FROM (EXISTS ( SELECT 1\n                   FROM stock_movement m\n                  WHERE ((m.order_id = i.order_id) AND (m.book_id = i.book_id) AND (m.kind = 'CANCELLED'::text) AND (m.quantity_delta = i.quantity))))))\n        UNION ALL\n         SELECT 'shelving_contract'::text,\n            (r.book_id)::text AS book_id\n           FROM (book_receipt r\n             JOIN offer o ON ((o.offer_id = r.source_offer_id)))\n          WHERE ((r.purchase_cost <> o.offered_price) OR (NOT (EXISTS ( SELECT 1\n                   FROM offer_event e\n                  WHERE ((e.offer_id = o.offer_id) AND (e.kind = 'PAID'::text))))) OR (NOT (EXISTS ( SELECT 1\n                   FROM offer_event e\n                  WHERE ((e.offer_id = o.offer_id) AND (e.kind = 'STOCKED'::text))))))\n        UNION ALL\n         SELECT 'stocked_book_missing'::text,\n            (e.offer_id)::text AS offer_id\n           FROM offer_event e\n          WHERE ((e.kind = 'STOCKED'::text) AND (NOT (EXISTS ( SELECT 1\n                   FROM book_receipt r\n                  WHERE (r.source_offer_id = e.offer_id)))))\n        UNION ALL\n         SELECT 'movement_event_kind'::text,\n            (m.book_id)::text AS book_id\n           FROM (stock_movement m\n             JOIN order_event e ON (((e.order_id = m.order_id) AND (e.sequence_no = m.order_event_sequence))))\n          WHERE (((m.kind = 'ORDERED'::text) AND (e.kind <> 'PLACED'::text)) OR ((m.kind = 'CANCELLED'::text) AND (e.kind <> 'CANCELLED'::text)))\n        )\n SELECT issue,\n    entity\n   FROM differences;"
+    },
+    {
+      "name": "v_offer_fact_state",
+      "definition": " SELECT DISTINCT ON (offer_id) offer_id,\n    sequence_no AS head_sequence,\n        CASE kind\n            WHEN 'SUBMITTED'::text THEN 'PENDING_APPROVAL'::text\n            WHEN 'STOCKED'::text THEN 'PAID'::text\n            ELSE kind\n        END AS status,\n    (kind = 'STOCKED'::text) AS stocked\n   FROM offer_event\n  ORDER BY offer_id, sequence_no DESC;"
+    },
+    {
+      "name": "v_order_fact_state",
+      "definition": " SELECT DISTINCT ON (order_id) order_id,\n    sequence_no AS head_sequence,\n        CASE kind\n            WHEN 'PLACED'::text THEN 'PENDING'::text\n            WHEN 'ACCEPTED'::text THEN 'ORDERED'::text\n            ELSE kind\n        END AS status\n   FROM order_event\n  ORDER BY order_id, sequence_no DESC;"
+    },
+    {
+      "name": "v_order_summary",
+      "definition": " SELECT o.order_id,\n    o.order_number,\n    o.customer_subject,\n    o.source_address_id,\n    o.ship_line1,\n    o.ship_line2,\n    o.ship_city,\n    o.ship_state_code,\n    o.ship_postal_code,\n    o.ship_country_code,\n    o.ordered_at,\n    o.delivery_due_date,\n    o.subtotal,\n    o.tax_rate,\n    o.tax,\n    o.total,\n    s.status,\n    ( SELECT sum((i.frozen_cost * (i.quantity)::numeric)) AS sum\n           FROM order_item i\n          WHERE (i.order_id = o.order_id)) AS cost,\n    (o.subtotal - ( SELECT sum((i.frozen_cost * (i.quantity)::numeric)) AS sum\n           FROM order_item i\n          WHERE (i.order_id = o.order_id))) AS gross_profit\n   FROM (sales_order o\n     JOIN order_state s USING (order_id));"
+    },
+    {
+      "name": "v_paid_offer",
+      "definition": " SELECT o.offer_id,\n    o.customer_subject,\n    o.title,\n    o.author,\n    o.isbn,\n    o.publisher_id,\n    o.publisher_kind,\n    o.book_type_id,\n    o.book_type_kind,\n    o.genre_id,\n    o.genre_kind,\n    o.condition_id,\n    o.condition_kind,\n    o.description,\n    o.offered_price,\n    o.submitted_at,\n    e.occurred_at AS paid_at\n   FROM (offer o\n     JOIN offer_event e USING (offer_id))\n  WHERE (e.kind = 'PAID'::text);"
+    },
+    {
+      "name": "v_stock_fact_balance",
+      "definition": " SELECT book_id,\n    max(sequence_no) AS head_sequence,\n    (sum(quantity_delta))::integer AS available\n   FROM stock_movement\n  GROUP BY book_id;"
+    }
+  ]
+}
