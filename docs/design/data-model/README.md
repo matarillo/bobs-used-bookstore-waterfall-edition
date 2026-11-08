@@ -12,6 +12,8 @@ Bob's Used Bookstoreの販売・買取を、業務事実を正本とする単一
 
 | 文書 | 内容 |
 | --- | --- |
+| [要件レビュー](requirements-review.md) | 欠陥・確認事項の重大性、評価理由、確定条件 |
+| [要件とデータモデルの照合・設計判断](requirements-model-reconciliation.md) | 設計判断・未解決事項を先に読み、10概念・13関係・63属性を照合 |
 | [概念モデル](conceptual-model.md) | 事実の分類、所有者、パターンの適用 |
 | [論理モデル](logical-model.md) | 関係、導出式、保持・削除 |
 | [物理モデル](physical-model.md) | PostgreSQLの全列・制約・索引とER図の生成元 |

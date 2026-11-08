@@ -8,6 +8,7 @@ status: proposed
 要件の内容は参照先を正とし、ここでは識別子とモデルへの割当てを記録する。
 「DB実証」は制約・SQL・検証用操作契約の試験を指す。画面・本番API・外部サービスの受入完了を表さない。
 「設計のみ」「DB一部」の行は後工程での検証が必要。方法論との対応は[概念モデル](conceptual-model.md#パターンの適用)を参照する。
+概念そのものの対応・分割・追加・省略・多重度は、[要件とデータモデルの照合・設計判断](requirements-model-reconciliation.md)でエンティティ・関係・主要項目ごとに照合する。要件自体の指摘・重大性・評価理由は[要件レビュー](requirements-review.md)で確認する。
 
 <!-- generated-traceability:start -->
 
